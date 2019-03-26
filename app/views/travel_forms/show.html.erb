@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @travel_form.First_Name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @travel_form.Last_Name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @travel_form.Department %>
+</p>
+
+<p>
+  <strong>Start date:</strong>
+  <%= @travel_form.Start_Date %>
+</p>
+
+<p>
+  <strong>End date:</strong>
+  <%= @travel_form.End_Date %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @travel_form.Location %>
+</p>
+
+<p>
+  <strong>Flight price:</strong>
+  <%= @travel_form.Flight_Price %>
+</p>
+
+<p>
+  <strong>Hotel price:</strong>
+  <%= @travel_form.Hotel_Price %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @travel_form.Mileage %>
+</p>
+
+<p>
+  <strong>Transportation:</strong>
+  <%= @travel_form.Transportation %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @travel_form.Other %>
+</p>
+
+<%= link_to 'Edit', edit_travel_form_path(@travel_form) %> |
+<%= link_to 'Back', travel_forms_path %>

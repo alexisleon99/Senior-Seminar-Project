@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @expense_report.First_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @expense_report.Last_Name %>
+</p>
+
+<p>
+  <strong>Department:</strong>
+  <%= @expense_report.Department %>
+</p>
+
+<p>
+  <strong>Flight:</strong>
+  <%= @expense_report.Flight %>
+</p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @expense_report.Hotel %>
+</p>
+
+<p>
+  <strong>Mileage:</strong>
+  <%= @expense_report.Mileage %>
+</p>
+
+<p>
+  <strong>Transportation:</strong>
+  <%= @expense_report.Transportation %>
+</p>
+
+<p>
+  <strong>Other:</strong>
+  <%= @expense_report.Other %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @expense_report.image_url %>
+</p>
+
+<%= link_to 'Edit', edit_expense_report_path(@expense_report) %> |
+<%= link_to 'Back', expense_reports_path %>
