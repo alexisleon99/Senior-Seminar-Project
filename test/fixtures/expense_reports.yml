@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  First_name: MyString
+  Last_Name: MyString
+  Department: MyString
+  Flight: 9.99
+  Hotel: 9.99
+  Mileage: 9.99
+  Transportation: 9.99
+  Other: 9.99
+  image_url: MyString
+
+two:
+  First_name: MyString
+  Last_Name: MyString
+  Department: MyString
+  Flight: 9.99
+  Hotel: 9.99
+  Mileage: 9.99
+  Transportation: 9.99
+  Other: 9.99
+  image_url: MyString

@@ -1,0 +1,2 @@
+class TravelForm < ApplicationRecord
+end
