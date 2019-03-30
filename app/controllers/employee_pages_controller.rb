@@ -1,6 +1,5 @@
 class EmployeePagesController < ApplicationController
   before_action :set_employee_page, only: [:show, :edit, :update, :destroy]
-
   # GET /employee_pages
   # GET /employee_pages.json
   def index
