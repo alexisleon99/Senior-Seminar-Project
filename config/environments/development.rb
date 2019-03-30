@@ -6,6 +6,12 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+<<<<<<< HEAD
+=======
+  config.webpacker.check_yarn_integrity = false
+
+
+>>>>>>> 4a94c58fd6f278332aad313842a7fec2373009db
   # Do not eager load code on boot.
   config.eager_load = false
 
