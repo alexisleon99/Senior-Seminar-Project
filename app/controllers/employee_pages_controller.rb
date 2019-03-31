@@ -12,6 +12,7 @@ class EmployeePagesController < ApplicationController
   # GET /employee_pages/1.json
   def show
     @travel_forms = TravelForm.all
+    @expense_reports = ExpenseReport.all
   end
 
   # GET /employee_pages/new
