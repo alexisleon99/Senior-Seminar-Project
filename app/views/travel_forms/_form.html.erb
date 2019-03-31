@@ -12,6 +12,7 @@
   <% end %>
   
 
+<<<<<<< HEAD
   
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
@@ -38,26 +39,14 @@
     </ul>
   </div>
 </nav>
+=======
+>>>>>>> 2e3bbb23ca5881fcb654635869c6f5ba6779e288
 
   <div class="container">
     <div class="col-lg-12 text-center">
       <h1 class="mt-5"> New Travel Form</h1>
     </div>
   </div>
-
-<div class="container">
-  <div class="col-lg-12 text-left">
-    
-  <form>
-    <div class="row">
-      <div class="col">
-      <input typer="text" class="form-control" placeholder="First Name">
-    </div>
-    <div class="col">
-      <input type="text" class="form-control" placeholder="Last Name">
-    </div>
-  </div>
-  </form>
 
   <div class="field">
     <%= form.label :First_Name %>
@@ -84,16 +73,10 @@
     <%= form.label :End_Date %>
     <%= form.date_select :End_Date %>
   </div>
-
-  <div class="form-group">
-    <label for="Location">Choose a location</label>
-    <select class="form-control">
-      <option>Location 1</option>
-      <option>Location 2</option>
-      <option>Location 3</option>
-      <option>Location 4</option>
-      <option>Location 5</option>
-    </select>
+  
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_field :Location %>
   </div>
 
   <div class="field">
