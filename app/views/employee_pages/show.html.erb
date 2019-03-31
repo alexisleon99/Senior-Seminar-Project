@@ -2,26 +2,10 @@
 <div class="col-lg-12 text-center">
   <h1 class="mt-5"> Travel Form</h1>
 </div>
-<table>
-	<p> hello my name is kendall</p>p>
-  <thead>
-    <tr>
-      <th>First name</th>
-      <th>Last name</th>
-      <th>Department</th>
-      <th>Start date</th>
-      <th>End date</th>
-      <th>Location</th>
-      <th>Flight price</th>
-      <th>Hotel price</th>
-      <th>Mileage</th>
-      <th>Transportation</th>
-      <th>Other</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+
   <tbody>
     <% @travel_forms.each do |travel_form| %>
+    <div>
       <tr>
         <td><%= travel_form.First_Name %></td>
         <td><%= travel_form.Last_Name %></td>
@@ -34,13 +18,10 @@
         <td><%= travel_form.Mileage %></td>
         <td><%= travel_form.Transportation %></td>
         <td><%= travel_form.Other %></td>
-        <td><%= link_to 'Show', travel_form %></td>
-        <td><%= link_to 'Edit', edit_travel_form_path(travel_form) %></td>
-        <td><%= link_to 'Destroy', travel_form, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Review', travel_form %></td>
       </tr>
+    </div>
     <% end %>
   </tbody>
-</table>
 
-<%= link_to 'Edit', edit_employee_page_path(@employee_page) %> |
 <%= link_to 'Back', employee_pages_path %>

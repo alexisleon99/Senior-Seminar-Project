@@ -1,4 +1,5 @@
 class EmployeePagesController < ApplicationController
+
   before_action :set_employee_page, only: [:show, :edit, :update, :destroy]
 
   # GET /employee_pages
@@ -10,6 +11,7 @@ class EmployeePagesController < ApplicationController
   # GET /employee_pages/1
   # GET /employee_pages/1.json
   def show
+    @travel_forms = TravelForm.all
   end
 
   # GET /employee_pages/new
