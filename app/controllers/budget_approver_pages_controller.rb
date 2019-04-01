@@ -10,6 +10,7 @@ class BudgetApproverPagesController < ApplicationController
   # GET /budget_approver_pages/1
   # GET /budget_approver_pages/1.json
   def show
+      @travel_forms = TravelForm.all
   end
 
   # GET /budget_approver_pages/new
