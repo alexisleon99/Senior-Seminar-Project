@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :budget_approver_pages
+  resources :request_forms
   resources :expense_reports
   resources :employee_pages
   resources :travel_forms
