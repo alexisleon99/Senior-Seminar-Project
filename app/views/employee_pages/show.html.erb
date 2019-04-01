@@ -11,6 +11,7 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
       </tr>
     </div>
     <% end %>
@@ -25,17 +26,14 @@
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <td><%= link_to 'Edit', edit_request_form_path(expense_report.id) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 <div>
-<%= link_to 'New Travel Form', new_expense_report_path %>
+<%= link_to 'New Expense Report', new_expense_report_path %>
 </div>
 <%= link_to 'Back', employee_pages_path %>
-render{
-  <div>
-      hello
-  </div>
-}
+
 

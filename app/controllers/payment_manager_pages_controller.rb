@@ -10,6 +10,7 @@ class PaymentManagerPagesController < ApplicationController
   # GET /payment_manager_pages/1
   # GET /payment_manager_pages/1.json
   def show
+    @expense_reports = ExpenseReport.all
   end
 
   # GET /payment_manager_pages/new
