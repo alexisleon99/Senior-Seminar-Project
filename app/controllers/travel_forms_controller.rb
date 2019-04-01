@@ -1,6 +1,6 @@
 class TravelFormsController < ApplicationController
   before_action :set_travel_form, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /travel_forms
   # GET /travel_forms.json
   def index
