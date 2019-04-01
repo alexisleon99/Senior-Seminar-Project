@@ -1,3 +1,14 @@
+<% if notice %>
+    <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<%= content_tag :div,
+    id: "payment"  do %>
+
+    <%= javascript_pack_tag 'payment' %>
+<% end %>
+
+
 <p id="notice"><%= notice %></p>
 
 <h1>Employee Pages</h1>

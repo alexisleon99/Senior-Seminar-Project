@@ -5,6 +5,11 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms.json
   def index
     @travel_forms = TravelForm.all
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @travel_forms}
+    end
   end
 
   # GET /travel_forms/1

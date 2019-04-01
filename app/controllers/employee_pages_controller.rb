@@ -6,6 +6,11 @@ class EmployeePagesController < ApplicationController
   # GET /employee_pages.json
   def index
     @employee_pages = EmployeePage.all
+
+    respond_to do |format|
+      format.html
+      format.json {render json: @employee_pages}
+    end
   end
 
   # GET /employee_pages/1
