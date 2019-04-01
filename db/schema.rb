@@ -10,7 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_26_014055) do
+ActiveRecord::Schema.define(version: 2019_04_01_191220) do
+
+  create_table "budget_approver_pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "employee_pages", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -27,6 +32,18 @@ ActiveRecord::Schema.define(version: 2019_03_26_014055) do
     t.decimal "Transportation"
     t.decimal "Other"
     t.string "image_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payment_manager_pages", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "request_forms", force: :cascade do |t|
+    t.string "Department"
+    t.decimal "amount"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

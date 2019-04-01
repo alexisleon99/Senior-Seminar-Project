@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Payment Manager Pages</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @payment_manager_pages.each do |payment_manager_page| %>
+      <tr>
+        <td><%= link_to 'Show', payment_manager_page %></td>
+        <td><%= link_to 'Edit', edit_payment_manager_page_path(payment_manager_page) %></td>
+        <td><%= link_to 'Destroy', payment_manager_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Payment Manager Page', new_payment_manager_page_path %>

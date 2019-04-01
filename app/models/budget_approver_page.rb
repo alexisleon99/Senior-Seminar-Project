@@ -1,0 +1,2 @@
+class BudgetApproverPage < ApplicationRecord
+end

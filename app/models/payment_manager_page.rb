@@ -1,0 +1,2 @@
+class PaymentManagerPage < ApplicationRecord
+end

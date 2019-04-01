@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Department: MyString
+  amount: 9.99
+
+two:
+  Department: MyString
+  amount: 9.99
