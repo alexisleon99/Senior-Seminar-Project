@@ -7,11 +7,11 @@ class CreateTravelForms < ActiveRecord::Migration[5.2]
       t.date :Start_Date
       t.date :End_Date
       t.string :Location
-      t.decimal :Flight_Price
-      t.decimal :Hotel_Price
+      t.decimal :Flight_Price, precision: 8, scale: 2
+      t.decimal :Hotel_Price, precision: 8, scale: 2
       t.decimal :Mileage
-      t.decimal :Transportation
-      t.decimal :Other
+      t.decimal :Transportation, precision: 8, scale: 2
+      t.decimal :Other, precision: 8, scale: 2
 
       t.timestamps
     end
