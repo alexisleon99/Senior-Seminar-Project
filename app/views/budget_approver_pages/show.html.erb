@@ -11,6 +11,8 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <td><%=button_to "Approve", travel_form_path, method: :put%></td>
+        <td><%=button_to "Deny", travel_form_path, method: :put%></td>
       </tr>
     </div>
     <% end %>
