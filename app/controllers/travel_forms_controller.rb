@@ -17,16 +17,6 @@ class TravelFormsController < ApplicationController
     @travel_form = TravelForm.new
   end
 
-  def approved
-    @travel_forms = TravelForm.find(params[:id])
-    @travel_forms.approved!
-  end
-  
-  def denied
-    @travel_forms = TravelForm.find(params[:id])
-    @travel_forms.denied!
-  end
-  
   # GET /travel_forms/1/edit
   def edit
   end
