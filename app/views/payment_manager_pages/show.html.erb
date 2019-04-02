@@ -7,7 +7,8 @@
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
-        
+        <td><%=button_to "Approve"%></td>
+        <td><%=button_to "Deny"%></td>
       </tr>
     <% end %>
   </tbody>
