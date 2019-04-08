@@ -16,6 +16,7 @@ end
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 gem 'cocoon'
+gem 'simple_form'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.2.1'
 gem "jquery-rails"

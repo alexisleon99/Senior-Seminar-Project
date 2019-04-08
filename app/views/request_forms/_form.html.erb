@@ -11,9 +11,11 @@
     </div>
   <% end %>
 
+  <%= simple_nested_form_for @request_form do |f| %>
   <div class="field">
     <%= link_to_add "Department", :Department , :class=> "btn" %>
   </div>
+  <% end %>
   <div class="field">
     <%= form.label :Department %>
     <%= form.text_field :Department %>
