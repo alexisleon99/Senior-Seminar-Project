@@ -1,0 +1,17 @@
+@import "bootstrap";
+
+.registrations,
+.sessions,
+.passwords,
+.pyament_managers,
+.employee
+.budget_approver {
+    width: 80%;
+    margin: 0 auto;
+
+    .form-actions {
+        .btn {
+            @extend .btn-primary
+        }
+    }
+}

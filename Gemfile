@@ -74,3 +74,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #adding gem to integrate react
 gem 'webpacker'
+#gem for sign in
+gem 'devise'
+#simple form for form stuffs 
+gem 'simple_form'
