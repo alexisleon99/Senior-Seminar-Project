@@ -1,10 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class Payment extends React.Component {
+export default class Employee extends React.Component {
 
-    state = { employee_pages: [],
-    		travel_forms: [] };
+    state = { employee_pages: [] };
 
     componentDidMount = () => {
         var self = this;
@@ -14,7 +13,6 @@ export default class Payment extends React.Component {
             .then(function (response) {
                 console.log(response.data);
                 self.setState({ employee_pages: response.data })
-                self.setState({travel_forms: response.data})
             })
             .catch(function (error) {
                 console.log(error);
