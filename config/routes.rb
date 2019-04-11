@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  namespace :admin do
+      resources :accounts
+      resources :budget_approvers
+      resources :budget_approver_pages
+      resources :employees
+      resources :employee_pages
+      resources :expense_reports
+      resources :payment_managers
+      resources :payment_manager_pages
+      resources :request_forms
+      resources :travel_forms
+
+      root to: "accounts#index"
+    end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
   resources :payment_manager_pages
   resources :budget_approver_pages
