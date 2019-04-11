@@ -126,11 +126,8 @@ GEM
     nio4r (2.3.1)
     nokogiri (1.10.2)
       mini_portile2 (~> 2.4.0)
-<<<<<<< HEAD
-    pg (0.18.4)
-=======
     orm_adapter (0.5.0)
->>>>>>> 6f3847fe0069d89879022b21bf93774d5af73e5a
+    pg (0.18.4)
     popper_js (1.14.5)
     public_suffix (3.0.3)
     puma (3.12.1)
@@ -225,13 +222,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
-<<<<<<< HEAD
-=======
-    uglifier (4.1.20)
-      execjs (>= 0.3.0, < 3)
     warden (1.2.8)
       rack (>= 2.0.6)
->>>>>>> 6f3847fe0069d89879022b21bf93774d5af73e5a
     web-console (3.7.0)
       actionview (>= 5.0)
       activemodel (>= 5.0)
