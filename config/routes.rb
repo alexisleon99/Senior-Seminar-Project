@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :accounts,  :controllers => { :registrations => 'registrations' }
   resources :payment_manager_pages
   resources :budget_approver_pages
   resources :request_forms
