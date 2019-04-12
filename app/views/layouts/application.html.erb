@@ -11,11 +11,26 @@
         <a class="nav-link" href=/>Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a><%= link_to 'Budget Approver',budget_approver_pages_path%></a>
+        <a class="nav-link" href=budget_approver_pages>Budget Approver <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item active">
-        <a><%= link_to 'Payment Manager',payment_manager_pages_path%></a>
+        <a class="nav-link" href=payment_manager_pages>Payment Manager <span class="sr-only">(current)</span></a>
       </li>
+      <% if account_signed_in? %>
+    <li class="nav-item">
+        <%= link_to 'Edit account', edit_account_registration_path, class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to 'Sign out', destroy_account_session_path, :method=>'delete', class:"nav-link" %>
+    </li>
+<% else %>
+    <li class="nav-item">
+        <%= link_to 'Sign in', new_account_session_path, class:"nav-link" %>
+    </li>
+    <li class="nav-item">
+        <%= link_to 'Sign up', new_account_registration_path,  class:"nav-link" %>
+    </li>
+<% end %>
     </ul>
   </div>
 </nav>

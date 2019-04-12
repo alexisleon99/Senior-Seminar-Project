@@ -1,3 +1,3 @@
 class ExpenseReport < ApplicationRecord
-	validates :First_Name, :Last_Name, :Department, :Flight_Price, :Hotel_Price, :Mileage, :Transportation, :Other, :image_url, presence: true
+	validates :First_name, :Last_Name, :Department, :Flight, :Hotel, :Mileage, :Transportation, :Other, :image_url, presence: true
 end

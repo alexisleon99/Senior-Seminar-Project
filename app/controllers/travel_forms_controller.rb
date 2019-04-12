@@ -26,6 +26,14 @@ class TravelFormsController < ApplicationController
   def edit
   end
 
+  def approve
+
+  end
+
+  def denied
+
+  end
+
   # POST /travel_forms
   # POST /travel_forms.json
   def create

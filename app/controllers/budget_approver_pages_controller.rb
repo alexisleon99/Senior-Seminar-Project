@@ -22,6 +22,14 @@ class BudgetApproverPagesController < ApplicationController
   def edit
   end
 
+  def approve
+
+  end
+
+  def denied
+
+  end
+
   # POST /budget_approver_pages
   # POST /budget_approver_pages.json
   def create
