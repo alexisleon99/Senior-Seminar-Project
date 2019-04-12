@@ -76,3 +76,4 @@ gem 'webpacker'
 gem 'devise'
 #simple form for form stuffs 
 gem 'simple_form'
+gem 'administrate'
