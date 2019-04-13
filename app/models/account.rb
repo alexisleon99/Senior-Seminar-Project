@@ -4,6 +4,6 @@ class Account < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         ACCOUNT_TYPES=["employee", "budget_apporover","payment_manager"]
+         ACCOUNT_TYPES=["SuperAccount","employee", "budget_apporover","payment_manager"]
          attr_accessor :type
 end

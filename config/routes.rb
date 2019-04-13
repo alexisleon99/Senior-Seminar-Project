@@ -10,6 +10,7 @@ Rails.application.routes.draw do
       resources :payment_manager_pages
       resources :request_forms
       resources :travel_forms
+      resources :super_accounts
 
       root to: "accounts#index"
     end
