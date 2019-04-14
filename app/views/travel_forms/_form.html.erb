@@ -73,6 +73,9 @@
     <%= form.label :Other %>
     <%= form.text_field :Other %>
   </div>
+  <div class="field">
+  <%= hidden_field_tag :account_id, current_account.id %>
+</div>
 
   <div class="actions">
     <%= form.submit %>
