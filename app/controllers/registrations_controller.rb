@@ -8,11 +8,13 @@ class RegistrationsController < Devise::RegistrationsController
 
         if (resource.type=="Employee")
             resource.accountable = Employee.new
-            resource.accountable.pay_type = 0 # default pay_type is Check
+        
+        else if(resource.type=="BudgetApprover")
+            resource.accountable = BudgetApprover.new
         else
-            resource.accountable = Employee.new
+            resource.accountable = PaymentManager.new
         end
-
+    end
         resource.save
         yield resource if block_given?
         if resource.persisted?
