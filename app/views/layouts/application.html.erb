@@ -23,6 +23,13 @@
     <li class="nav-item">
         <%= link_to 'Sign out', destroy_account_session_path, :method=>'delete', class:"nav-link" %>
     </li>
+    <% if current_account.accountable_type == "SuperAccount"%>
+    <li role="presentation" class="dropdown">
+
+      <a class = "nav-link" href = "/admin">Admin Dasboard</a>
+
+    </li>
+    <%end%>
 <% else %>
     <li class="nav-item">
         <%= link_to 'Sign in', new_account_session_path, class:"nav-link" %>
@@ -30,6 +37,7 @@
     <li class="nav-item">
         <%= link_to 'Sign up', new_account_registration_path,  class:"nav-link" %>
     </li>
+
 <% end %>
     </ul>
   </div>

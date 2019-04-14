@@ -21,7 +21,10 @@ Rails.application.routes.draw do
   resources :expense_reports
   resources :employee_pages
   resources :travel_forms
-  
-  root 'employee_pages#index'
+ root 'employee_pages#index'
+ #root '/accounts/sign_in'
+ #root 'devise/sessions#new'
+ #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
