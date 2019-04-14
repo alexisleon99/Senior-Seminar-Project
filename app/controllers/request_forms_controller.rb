@@ -69,6 +69,6 @@ class RequestFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_form_params
-      params.require(:request_form).permit(:Department, :amount)
+      params.require(:request_form).permit(:amount, Department:[])
     end
 end

@@ -1,27 +1,52 @@
-<%= simple_form_for RequestForm.new do |f|  %>
- <%= f.error_notification  %>
- <div class= "form-inputs"> 
- </div>
- <h3>Items</h3>
- <table class= "table"> 
-  <thead> 
-   <tr> 
-    <th></th>
-    <th>Department</th>
-    <th>Amount</th>
-  </tr>
- </thead>
- <tbody class="items"> 
-  <%= simple_fields_for :departments do |builder| %>
-  <%= render 'department_fields', f: builder %>
-  <%end %>
- </tbody>
- </table>
+<%= form_with(model: request_form, local: true) do |form| %>
+  <% if request_form.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(request_form.errors.count, "error") %> prohibited this request_form from being saved:</h2>
 
-<div class= "form-actions"> 
- <%= f.button :submit %>
- <%= link_to_add_association 'Add Item', f, :departments, class: 'btn btn- 
- primary', data: {association_insertion_node: '.departments', 
- association_insertion_method: :append } %>
-</div>
+      <ul>
+      <% request_form.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="field">
+    <%= label_tag 'Department_rd','Research & Development' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('rd'), id: 'Department_rd' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_marketing','Marketing' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('marketing'), id: 'Department_marketing' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_sales','Sales' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('sales'), id: 'Department_sales' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_media','Media & Communications' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('media'), id: 'Department_media' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_it','Information Technology' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('it'), id: 'Department_it' %>
+  </div>
+  
+    <div class="field">
+    <%= label_tag 'Department_legal','Legal' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('legal'), id: 'Department_legal' %>
+  </div>
+
+  <div class="field">
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
 <% end %>
