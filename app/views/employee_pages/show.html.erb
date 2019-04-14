@@ -6,6 +6,7 @@
   <table>
   <tbody>
     <% @travel_forms.each do |travel_form| %>
+      <%if travel_form.account_id == current_account.id%>
     <div>
       <tr>
       <td> Travel form </td>
@@ -14,6 +15,7 @@
         <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
       </tr>
     </div>
+    <%end%>
     <% end %>
   </tbody>
 </table>
