@@ -5,6 +5,21 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+Employee.destroy_all
+
+Employee.create([
+	{ 	
+		name: "Ema"
+	},
+	{
+		name: "Eric"
+	},
+	{
+		name: "Eli"
+	}
+])
+
+
 TravelForm.destroy_all
 
 TravelForm.create([

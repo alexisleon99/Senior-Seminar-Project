@@ -11,7 +11,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Employee Pages</h1>
+<h1 aligin="center">List of employees</h1>
 
 <table>
   <thead>
@@ -22,10 +22,12 @@
 
   <tbody>
     <% @employee_pages.each do |employee_page| %>
-      <tr>
-        <td><%= link_to 'Show', employee_page %></td>
-        <td><%= link_to 'Edit', edit_employee_page_path(employee_page) %></td>
-        <td><%= link_to 'Destroy', employee_page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <div class="employee_pages-body">
+      </div>
+      <tr></br></br>
+        <%= link_to 'Show', employee_page, class: "btn-group btn-primary btn-sm"  %>
+        <%= link_to 'Edit', edit_employee_page_path(employee_page), class: "btn-group btn-sm btn-info" %>
+        <%= link_to 'Destroy', employee_page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-group btn-sm btn-danger" %>
       </tr>
     <% end %>
   </tbody>
@@ -33,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Employee Page', new_employee_page_path %>
+<%= link_to 'New Employee Page', new_employee_page_path, class: "btn btn-xs btn-success" %>

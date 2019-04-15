@@ -33,6 +33,7 @@ class EmployeePagesController < ApplicationController
   # POST /employee_pages.json
   def create
     @employee_page = EmployeePage.new(employee_page_params)
+    # @employee_page.employee = Employee.first
 
     respond_to do |format|
       if @employee_page.save

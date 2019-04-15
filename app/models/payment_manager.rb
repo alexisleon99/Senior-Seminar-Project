@@ -1,3 +1,3 @@
 class PaymentManager < ApplicationRecord
-    has_one :account, as: :accountable
+    # has_one :account, as: :accountable
 end

@@ -23,7 +23,7 @@ export default class Employee extends React.Component {
         return(
             <div>
                 <h3>
-                    There are {this.state.employee_pages.length} pages in the payment.
+                    There are {this.state.employee_pages.length} employees waiting to be approved.
                 </h3>
             </div>
         );
