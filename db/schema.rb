@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 2019_04_12_230103) do
+=======
+ActiveRecord::Schema.define(version: 2019_04_14_155529) do
+>>>>>>> 5784ac6bcff03f2c73a1463487b3dc4b5ee055b3
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -81,6 +85,12 @@ ActiveRecord::Schema.define(version: 2019_04_12_230103) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "super_accounts", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "travel_forms", force: :cascade do |t|
     t.string "First_Name"
     t.string "Last_Name"
@@ -95,6 +105,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_230103) do
     t.decimal "Other", precision: 8, scale: 2
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "account_id"
   end
 
 end

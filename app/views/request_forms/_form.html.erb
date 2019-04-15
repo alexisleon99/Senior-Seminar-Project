@@ -10,10 +10,35 @@
       </ul>
     </div>
   <% end %>
-
+  
   <div class="field">
-    <%= form.label :Department %>
-    <%= form.text_field :Department %>
+    <%= label_tag 'Department_rd','Research & Development' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('rd'), id: 'Department_rd' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_marketing','Marketing' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('marketing'), id: 'Department_marketing' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_sales','Sales' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('sales'), id: 'Department_sales' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_media','Media & Communications' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('media'), id: 'Department_media' %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag 'Department_it','Information Technology' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('it'), id: 'Department_it' %>
+  </div>
+  
+    <div class="field">
+    <%= label_tag 'Department_legal','Legal' %>
+    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('legal'), id: 'Department_legal' %>
   </div>
 
   <div class="field">

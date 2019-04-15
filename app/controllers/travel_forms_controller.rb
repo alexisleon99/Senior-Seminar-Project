@@ -10,6 +10,9 @@ class TravelFormsController < ApplicationController
       format.html
       format.json {render json: @travel_forms}
     end
+
+    @travel_forms =  TravelForm.all
+
   end
 
   # GET /travel_forms/1
@@ -37,11 +40,12 @@ class TravelFormsController < ApplicationController
   # POST /travel_forms
   # POST /travel_forms.json
   def create
+    @account = current_account
     @travel_form = TravelForm.new(travel_form_params)
-
+      @travel_form.account_id = @account.id
     respond_to do |format|
       if @travel_form.save
-        format.html { redirect_to @travel_form, notice: 'Travel form was successfully created.' }
+        format.html { redirect_to request_forms_path, notice: 'Travel form was successfully created.' }
         format.json { render :show, status: :created, location: @travel_form }
       else
         format.html { render :new }

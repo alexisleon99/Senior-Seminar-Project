@@ -9,12 +9,10 @@ gem 'rails', '~> 5.2.2', '>= 5.2.2.1'
 group :development do
     gem 'sqlite3'
 end
-group :production do
-    gem 'pg', '0.18.4'
-    gem 'rails_12factor', '0.0.2'
-end
 # Use Puma as the app server
+gem 'cocoon'
 gem 'puma', '~> 3.11'
+gem 'simple_form'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.2.1'
 gem "jquery-rails"
