@@ -24,8 +24,9 @@ class ExpenseReportsController < ApplicationController
   # POST /expense_reports
   # POST /expense_reports.json
   def create
+    @account = current_account
     @expense_report = ExpenseReport.new(expense_report_params)
-
+    @expense_report.account_id = @account.id
     respond_to do |format|
       if @expense_report.save
         format.html { redirect_to @expense_report, notice: 'Expense report was successfully created.' }
