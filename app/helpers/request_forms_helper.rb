@@ -1,6 +1,6 @@
 module RequestFormsHelper
   def checked(area)
-     @request_forms.Department.nil? ? false : @request_forms.Department.match(area)
+      @request_form.Department.nil? ? false : @request_form.Department.match(area)
   end
 end
 

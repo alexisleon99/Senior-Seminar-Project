@@ -13,35 +13,42 @@
   
   <div class="field">
     <%= label_tag 'Department_rd','Research & Development' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('rd'), id: 'Department_rd' %>
+    <%= check_box_tag 'request_form[Department][]', 'Research & Development', checked('Research & Development'), id: 'Department_rd' %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
   </div>
   
   <div class="field">
     <%= label_tag 'Department_marketing','Marketing' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('marketing'), id: 'Department_marketing' %>
+    <%= check_box_tag 'request_forms[Department][]', 'Marketing', checked('Marketing'), id: 'Department_marketing' %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
   </div>
   
   <div class="field">
     <%= label_tag 'Department_sales','Sales' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('sales'), id: 'Department_sales' %>
+    <%= check_box_tag 'request_forms[Department][]', 'Sales', checked('Sales'), id: 'Department_sales' %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
   </div>
   
   <div class="field">
     <%= label_tag 'Department_media','Media & Communications' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('media'), id: 'Department_media' %>
+    <%= check_box_tag 'request_forms[Department][]', 'Media & Communications', checked('Media & Communications'), id: 'Department_media' %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
   </div>
   
   <div class="field">
     <%= label_tag 'Department_it','Information Technology' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('it'), id: 'Department_it' %>
+    <%= check_box_tag 'request_forms[Department][]', 'Information Technology', checked('Information Technology'), id: 'Department_it' %>
+    <%= form.label :amount %>
+    <%= form.text_field :amount %>
   </div>
   
     <div class="field">
     <%= label_tag 'Department_legal','Legal' %>
-    <%= check_box_tag 'request_forms[Department][]', 'rd', checked('legal'), id: 'Department_legal' %>
-  </div>
-
-  <div class="field">
+    <%= check_box_tag 'request_forms[Department][]', 'Legal', checked('Legal'), id: 'Department_legal' %>
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>

@@ -25,10 +25,9 @@ class RequestFormsController < ApplicationController
   # POST /request_forms.json
   def create
     @request_form = RequestForm.new(request_form_params)
-
     respond_to do |format|
       if @request_form.save
-        format.html { redirect_to employee_pages_path, notice: 'Request form was successfully created.' }
+        format.html { redirect_to @request_forms, notice: 'Request form was successfully created.' }
         format.json { render :show, status: :created, location: @request_form }
       else
         format.html { render :new }
@@ -69,6 +68,6 @@ class RequestFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_form_params
-      params.require(:request_form).permit(:amount, Department:[])
+      params.require(:request_form).permit(:amount, :Department)
     end
 end
