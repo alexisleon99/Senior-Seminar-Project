@@ -15,20 +15,21 @@ Rails.application.routes.draw do
       root to: "accounts#index"
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
-<<<<<<< HEAD
+
   resources :payment_manager_pages do
     put :approve
     put :denied
+    root to: "payment_manager_pages#index"
   end
   resources :budget_approver_pages do
     put :approve
     put :denied
   end
 
-=======
+
   resources :payment_manager_pages
   resources :budget_approver_pages
->>>>>>> 5784ac6bcff03f2c73a1463487b3dc4b5ee055b3
+
   resources :request_forms
   resources :expense_reports
   resources :employee_pages

@@ -30,11 +30,17 @@
   <tbody>
     <% @employee_pages.each do |employee_page| %>
       <div class="employee_pages-body">
+
       </div>
-      <tr></br></br>
-        <%= link_to 'Show', employee_page, class: "btn-group btn-primary btn-sm"  %>
-        <%= link_to 'Edit', edit_employee_page_path(employee_page), class: "btn-group btn-sm btn-info" %>
-        <%= link_to 'Destroy', employee_page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-group btn-sm btn-danger" %>
+
+      <tr>
+        <td><p> Created </p><%= employee_page.created_at %></td>
+        <td><p> Updated </p><%= employee_page.updated_at %></td>
+        <td></br></br>
+          <%= link_to 'Show', employee_page, class: "btn-group btn-primary btn-sm"  %>
+          <%= link_to 'Edit', edit_employee_page_path(employee_page), class: "btn-group btn-sm btn-info" %>
+          <%= link_to 'Destroy', employee_page, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-group btn-sm btn-danger" %>
+        </td>
       </tr>
     <% end %>
   </tbody>
