@@ -9,11 +9,11 @@ class RegistrationsController < Devise::RegistrationsController
         if (resource.type=="Employee")
             resource.accountable = Employee.new
         
-        else if(resource.type=="BudgetApprover")
+        elsif (resource.type=="Budget Approver")
             resource.accountable = BudgetApprover.new
         else
             resource.accountable = PaymentManager.new
-        end
+        
     end
         resource.save
         yield resource if block_given?
