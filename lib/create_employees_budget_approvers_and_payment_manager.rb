@@ -1,0 +1,30 @@
+Employee.transaction do
+  Employee.delete_all
+  Employee.create( :name => 'Ema' )
+  Employee.create( :name => 'Eric' )
+end
+
+BudgetApprover.transaction do
+  BudgetApprover.delete_all
+  BudgetApprover.create( :name => 'Bob' )
+  BudgetApprover.create( :name => 'Bran' )
+end
+
+PaymentManager.transaction do
+  PaymentManager.delete_all
+  PaymentManager.create( :name => 'Pam' )
+end
+
+Account.transaction do
+  Account.delete_all
+  Account.create( :email => 'Ema@employee.com', :password => 'changeme', :password_confirmation => 'changeme', 
+                  :accountable => Employee.find_by_name("Ema"))
+  Account.create( :email => 'Eric@employee.com', :password => 'changeme', :password_confirmation => 'changeme', 
+                  :accountable => Employee.find_by_name("Eric"))
+  Account.create( :email => 'bob@budget.com', :password => 'changeme', :password_confirmation => 'changeme', 
+                  :accountable => BudgetApprover.find_by_name("Bob"))
+  Account.create( :email => 'bran@budget.com', :password => 'changeme', :password_confirmation => 'changeme', 
+                  :accountable =>BudgetApprover.find_by_name("Bran"))
+  Account.create( :email => 'pam@payment.com', :password => 'changeme', :password_confirmation => 'changeme', 
+                  :accountable => PaymentManager.find_by_name("Pam"))
+end

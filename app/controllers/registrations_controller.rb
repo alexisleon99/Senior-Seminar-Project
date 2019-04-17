@@ -11,14 +11,7 @@ class RegistrationsController < Devise::RegistrationsController
             resource.accountable = Employee.new
         
 
-        elsif(resource.type=="BudgetApprover")
-            resource.accountable = BudgetApprover.new
-        else
-            resource.accountable = PaymentManager.new
-        end
-    
-
-        elsif (resource.type=="Budget Approver")
+        elsif(resource.type=="Budget Approver")
             resource.accountable = BudgetApprover.new
         else
             resource.accountable = PaymentManager.new

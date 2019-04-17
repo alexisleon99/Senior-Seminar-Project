@@ -1,0 +1,51 @@
+<% if notice %>
+    <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<%= content_tag :div,
+    id: "employee"  do %>
+
+    <%= javascript_pack_tag 'employee' %>
+<% end %>
+
+
+<p id="notice"><%= notice %></p>
+
+
+<h1 aligin="center">List of employees</h1>
+
+
+<h1>Employees</h1>
+<li>rails runner lib/create_super_account.rb</li>
+<li>to create admin account </li>
+<li>super@comapany.com password changeme</li>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee.each do |employee| %>
+      <div class="employee-body">
+
+      </div>
+
+      <tr>
+        <td><p> Created </p><%= employee.created_at %></td>
+        <td><p> Updated </p><%= employee.updated_at %></td>
+        <td></br></br>
+          <%= link_to 'Show', employee, class: "btn-group btn-primary btn-sm"  %>
+          <%= link_to 'Edit', edit_employee_path(employee), class: "btn-group btn-sm btn-info" %>
+          <%= link_to 'Destroy', employee, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn-group btn-sm btn-danger" %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee', new_employee_path, class: "btn btn-xs btn-success" %>
