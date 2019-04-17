@@ -1,8 +1,22 @@
 <p id="notice"><%= notice %></p>
 <h2 class="mt-5"> Expense Reports </h2>
 <table>
+<tbody>
+<% @travel_forms.each do |travel_form| %>
+  <%if travel_form.status == "Approved"%>
+<div>
+  <tr>
+  <td> Travel form </td>
+    <td><%= travel_form.id %></td>
+    <td><%= travel_form.status %></td>
+  </tr>
+</div>
+<%end%>
+<% end %>
+</tbody>
     <tbody>
     <% @expense_reports.each do |expense_report| %>
+      <%if expense_report.status == "Approved"%>
       <tr>
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
@@ -11,6 +25,7 @@
         <td><%=button_to "Deny", travel_form_path, method: :put%></td>
       </tr>
     <% end %>
+    <%end%>
   </tbody>
 </table>
 <div>
