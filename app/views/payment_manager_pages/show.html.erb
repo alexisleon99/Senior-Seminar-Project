@@ -7,7 +7,7 @@
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
-        <td><%=button_to "Approve", travel_form_path, method: :put%></td>
+        <td><%=button_to "Approve", travel_form_path, method: :update%></td>
         <td><%=button_to "Deny", travel_form_path, method: :put%></td>
       </tr>
     <% end %>

@@ -17,7 +17,17 @@ class BudgetApproverPagesController < ApplicationController
   def new
     @budget_approver_page = BudgetApproverPage.new
   end
-
+  # GET 
+  def approved
+    @travel_forms = @travel_forms.id
+    travel_forms.update_attributes(:status => "Approved")
+  end
+  
+  def deny
+    @travel_forms = @travel_forms.id
+    travel_forms.update_attributes(:status => "Denied")
+  end
+  
   # GET /budget_approver_pages/1/edit
   def edit
   end
@@ -26,7 +36,6 @@ class BudgetApproverPagesController < ApplicationController
   # POST /budget_approver_pages.json
   def create
     @budget_approver_page = BudgetApproverPage.new(budget_approver_page_params)
-
     respond_to do |format|
       if @budget_approver_page.save
         format.html { redirect_to @budget_approver_page, notice: 'Budget approver page was successfully created.' }

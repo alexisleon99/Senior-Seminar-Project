@@ -20,13 +20,23 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1/edit
   def edit
   end
+  
+  def approved
+      @travel_forms = @travel_forms.id
+      @travel_forms.update_attributes(:status, "Approved")
+  end
+  
+  def deny
+    @travel_forms = @travel_forms.id
+    @travel_forms.update_attributes(travel_forms.status, "Denied")
+  end
 
   # POST /travel_forms
   # POST /travel_forms.json
   def create
     @account = current_account
     @travel_form = TravelForm.new(travel_form_params)
-      @travel_form.account_id = @account.id
+    @travel_form.account_id = @account.id
     respond_to do |format|
       if @travel_form.save
         format.html { redirect_to request_forms_path, notice: 'Travel form was successfully created.' }
