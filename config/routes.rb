@@ -32,12 +32,8 @@ Rails.application.routes.draw do
   resources :employee
   resources :travel_forms
   resources :departments
-<<<<<<< HEAD
  get '/Approve', to: 'travel_forms#approved', as: 'Approve'
  root 'employee_pages#index'
-=======
- root 'employee#index'
->>>>>>> 0bcb7764a1a6a740d53be56a2b309034f036c502
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
