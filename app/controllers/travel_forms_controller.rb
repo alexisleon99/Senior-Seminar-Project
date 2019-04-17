@@ -4,7 +4,8 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms
   # GET /travel_forms.json
   def index
-    @travel_forms =  TravelForm.all
+    @travel_forms = TravelForm.all
+
   end
 
   # GET /travel_forms/1
@@ -29,6 +30,14 @@ class TravelFormsController < ApplicationController
   def deny
     @travel_forms = @travel_forms.id
     @travel_forms.update_attributes(travel_forms.status, "Denied")
+  end
+
+  def approve
+
+  end
+
+  def denied
+
   end
 
   # POST /travel_forms

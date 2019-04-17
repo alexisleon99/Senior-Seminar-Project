@@ -32,6 +32,18 @@ class BudgetApproverPagesController < ApplicationController
   def edit
   end
 
+  # def approve
+  #   @budget_approver_page
+  #   respond_to do |format|
+  #     if @travel_form.cost = department.total_amount
+  #       format.html { redirect_to @employee_page, notice: 'Budget was approved.' }
+  #     end
+  # end
+
+  # def denied
+
+  # end
+
   # POST /budget_approver_pages
   # POST /budget_approver_pages.json
   def create

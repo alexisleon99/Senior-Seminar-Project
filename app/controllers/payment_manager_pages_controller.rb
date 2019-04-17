@@ -52,6 +52,16 @@ class PaymentManagerPagesController < ApplicationController
     end
   end
 
+  def approve
+
+  end
+
+  def denied
+
+  end
+
+
+
   # DELETE /payment_manager_pages/1
   # DELETE /payment_manager_pages/1.json
   def destroy

@@ -1,3 +1,3 @@
 class EmployeePage < ApplicationRecord
-
+	
 end
