@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 <div class="col-lg-12 text-center">
-  <h1 class="mt-5"> Budget Approver </h1>
+  <h1 class="mt-5"> Budget Approver Page</h1>
 </div>
 <h2 class="mt-5"> Travel Forms</h2>
   <table>
@@ -11,7 +11,7 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%=button_to "Approve", travel_form_path, method: :get%></td>
+        <td><%=button_to "Approved", travel_form_path, method: :approved%></td>
         <td><%=button_to "Deny", travel_form_path, method: :put%></td>
       </tr>
     </div>
@@ -19,5 +19,5 @@
   </tbody>
 </table>
 
-<%= link_to 'Edit', edit_budget_approver_path(@budget_approver) %> |
-<%= link_to 'Back', budget_approver_path %>
+<%= link_to 'Edit', edit_budget_approver_page_path(@budget_approver_page) %> |
+<%= link_to 'Back', budget_approver_pages_path %>

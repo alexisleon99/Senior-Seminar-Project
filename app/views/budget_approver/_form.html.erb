@@ -1,10 +1,10 @@
-<%= form_with(model: budget_approver_page, local: true) do |form| %>
-  <% if budget_approver_page.errors.any? %>
+<%= form_with(model: budget_approver, local: true) do |form| %>
+  <% if budget_approver.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(budget_approver_page.errors.count, "error") %> prohibited this budget_approver_page from being saved:</h2>
+      <h2><%= pluralize(budget_approver.errors.count, "error") %> prohibited this budget_approver from being saved:</h2>
 
       <ul>
-      <% budget_approver_page.errors.full_messages.each do |message| %>
+      <% budget_approver.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>
