@@ -21,14 +21,11 @@ class BudgetApproverController < ApplicationController
   # GET /budget_approvers/1/edit
   def edit
   end
-
-  # def approve
-  #   @budget_approver
-  #   respond_to do |format|
-  #     if @travel_form.cost = department.total_amount
-  #       format.html { redirect_to @employee, notice: 'Budget was approved.' }
-  #     end
-  # end
+  def approve
+    @travel_forms = TravelForm.all
+		@travel_forms = @travel_forms.id
+		@travel_forms.update_attribute(:status, "Approved")
+	  end
 
   # def denied
 

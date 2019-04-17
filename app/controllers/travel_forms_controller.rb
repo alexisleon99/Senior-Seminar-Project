@@ -22,14 +22,12 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1/edit
   def edit
   end
-
-  # def approve
-
-  # end
-
-  # def denied
-
-  # end
+  
+  def approve
+    @travel_form = TravelForm.all
+		@travel_forms = @travel_forms.id
+		@travel_forms.update_attribute(:status, "Approved")
+	  end
 
   # POST /travel_forms
   # POST /travel_forms.json

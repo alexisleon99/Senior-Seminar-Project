@@ -14,12 +14,12 @@ Rails.application.routes.draw do
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
 
   resources :payment_manager do
-    put :approve
+    get :approve
     put :denied
     root to: "payment_manager#index"
   end
   resources :budget_approver do
-    put :approve
+    get :approve
     put :denied
   end
 
@@ -33,6 +33,7 @@ Rails.application.routes.draw do
   resources :travel_forms
   resources :departments
  root 'employee#index' 
+#get 'approve' to: 'travel_forms#approve'
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
