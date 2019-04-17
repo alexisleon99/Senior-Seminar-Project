@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_14_155529) do
+ActiveRecord::Schema.define(version: 2019_04_16_203101) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -38,6 +38,13 @@ ActiveRecord::Schema.define(version: 2019_04_14_155529) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "departments", force: :cascade do |t|
+    t.string "names"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "budget", default: 5000
+  end
+
   create_table "employee_pages", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -61,6 +68,8 @@ ActiveRecord::Schema.define(version: 2019_04_14_155529) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "status", default: "pending"
+    t.string "account_id"
   end
 
   create_table "payment_manager_pages", force: :cascade do |t|
@@ -102,6 +111,7 @@ ActiveRecord::Schema.define(version: 2019_04_14_155529) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "account_id"
+    t.string "status", default: "pending"
   end
 
 end

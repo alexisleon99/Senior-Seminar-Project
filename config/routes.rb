@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :expense_reports
   resources :employee_pages
   resources :travel_forms
+  resources :departments
  root 'employee_pages#index'
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
