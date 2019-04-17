@@ -26,7 +26,6 @@ class BudgetApproverPagesController < ApplicationController
   # POST /budget_approver_pages.json
   def create
     @budget_approver_page = BudgetApproverPage.new(budget_approver_page_params)
-
     respond_to do |format|
       if @budget_approver_page.save
         format.html { redirect_to @budget_approver_page, notice: 'Budget approver page was successfully created.' }

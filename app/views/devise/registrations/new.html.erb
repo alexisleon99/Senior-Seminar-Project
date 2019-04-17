@@ -16,7 +16,7 @@
                 required: true,
                 input_html: { autocomplete: "new-password" } %>
     <%= f.input :type, required: true, as: :radio_buttons, label: "Type of Account", collection: Account::ACCOUNT_TYPES.drop(1), checked: 'employee'%>
-    <%= f.input :type, required: true, as: :radio_buttons, label: "Department", collection: Account::DEPARTMENT_TYPES, checked: 'employee'%>
+    <%= f.input :department, required: true, as: :radio_buttons, label: "Department", collection: Account::DEPARTMENT_TYPES, checked: 'Marketing'%>
     
   </div>
 
