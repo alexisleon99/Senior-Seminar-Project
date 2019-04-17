@@ -21,6 +21,10 @@
                 hint: "we need your current password to confirm your changes",
                 required: true,
                 input_html: { autocomplete: "current-password" } %>
+    <%= f.input :department,
+                hint: "Department you are working in",
+                required: false,
+                input_html:{} %>
   </div>
 
   <div class="form-actions">

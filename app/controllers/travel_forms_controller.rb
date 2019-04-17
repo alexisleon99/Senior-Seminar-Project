@@ -11,6 +11,7 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1
   # GET /travel_forms/1.json
   def show
+    @travel_form.update_attribute(:status, "Approved")
   end
 
   # GET /travel_forms/new
@@ -21,6 +22,7 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1/edit
   def edit
   end
+<<<<<<< HEAD
   
   def approved
       @travel_forms = @travel_forms.id
@@ -40,6 +42,8 @@ class TravelFormsController < ApplicationController
 
   end
 
+=======
+>>>>>>> 0c16db05004a3244d59adc60ae536c12b0ce7c14
   # POST /travel_forms
   # POST /travel_forms.json
   def create

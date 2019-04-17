@@ -6,5 +6,6 @@ class Account < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
          ACCOUNT_TYPES=["SuperAccount","Employee", "Budget Approver","Payment Manager"]
+         DEPARTMENT_TYPES=["Marketing", "Sales" ,"Media & Communications" ,"Information Technology" ,"Legal" ,"R&D"]
          attr_accessor :type
 end
