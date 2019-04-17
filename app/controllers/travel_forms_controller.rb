@@ -34,13 +34,13 @@ class TravelFormsController < ApplicationController
     @travel_forms.update_attributes(travel_forms.status, "Denied")
   end
 
-  def approve
+  # def approve
 
-  end
+  # end
 
-  def denied
+  # def denied
 
-  end
+  # end
 
 =======
 >>>>>>> 0c16db05004a3244d59adc60ae536c12b0ce7c14

@@ -2,12 +2,9 @@ Rails.application.routes.draw do
   namespace :admin do
       resources :accounts
       resources :budget_approvers
-      resources :budget_approver_pages
       resources :employees
-      resources :employee_pages
       resources :expense_reports
       resources :payment_managers
-      resources :payment_manager_pages
       resources :request_forms
       resources :travel_forms
       resources :super_accounts
@@ -16,27 +13,31 @@ Rails.application.routes.draw do
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
 
-  resources :payment_manager_pages do
+  resources :payment_manager do
     put :approve
     put :denied
-    root to: "payment_manager_pages#index"
+    root to: "payment_manager#index"
   end
-  resources :budget_approver_pages do
+  resources :budget_approver do
     put :approve
     put :denied
   end
 
 
-  resources :payment_manager_pages
-  resources :budget_approver_pages
+  resources :payment_manager
+  resources :budget_approver
 
   resources :request_forms
   resources :expense_reports
-  resources :employee_pages
+  resources :employee
   resources :travel_forms
   resources :departments
+<<<<<<< HEAD
  get '/Approve', to: 'travel_forms#approved', as: 'Approve'
  root 'employee_pages#index'
+=======
+ root 'employee#index'
+>>>>>>> 0bcb7764a1a6a740d53be56a2b309034f036c502
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end

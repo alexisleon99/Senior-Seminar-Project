@@ -27,7 +27,11 @@ class RequestFormsController < ApplicationController
     @request_form = RequestForm.new(request_form_params)
     respond_to do |format|
       if @request_form.save
+<<<<<<< HEAD
         format.html { redirect_to @request_forms, notice: 'Request form was successfully created.' }
+=======
+        format.html { redirect_to employee_path, notice: 'Request form was successfully created.' }
+>>>>>>> 0bcb7764a1a6a740d53be56a2b309034f036c502
         format.json { render :show, status: :created, location: @request_form }
       else
         format.html { render :new }

@@ -27,11 +27,6 @@ ActiveRecord::Schema.define(version: 2019_04_16_203101) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
-  create_table "budget_approver_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "budget_approvers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -43,11 +38,6 @@ ActiveRecord::Schema.define(version: 2019_04_16_203101) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "budget", default: 5000
-  end
-
-  create_table "employee_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -70,11 +60,6 @@ ActiveRecord::Schema.define(version: 2019_04_16_203101) do
     t.datetime "updated_at", null: false
     t.string "status", default: "pending"
     t.string "account_id"
-  end
-
-  create_table "payment_manager_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "payment_managers", force: :cascade do |t|
