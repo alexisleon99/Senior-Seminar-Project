@@ -14,6 +14,15 @@ PaymentManager.transaction do
   PaymentManager.delete_all
   PaymentManager.create( :name => 'Pam' )
 end
+Department.transaction do
+  Department.delete_all
+  Department.create(:names => 'R&D')
+  Department.create(:names => 'Marketing')
+  Department.create(:names => 'Sales')
+  Department.create(:names => 'Media & Communications')
+  Department.create(:names => 'Information Technology')
+  Department.create(:names => 'Legal')
+end
 
 Account.transaction do
   Account.delete_all

@@ -10,13 +10,7 @@ group :development do
     gem 'sqlite3'
 end
 # Use Puma as the app server
-gem 'cocoon'
-gem 'puma', '~> 3.11'
-gem 'simple_form'
-gem 'jquery-rails'
-gem 'bootstrap', '~> 4.2.1'
-gem "jquery-rails"
-gem "font-awesome-rails"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -73,5 +67,11 @@ gem 'webpacker'
 #gem for sign in
 gem 'devise'
 #simple form for form stuffs 
-gem 'simple_form'
 gem 'administrate'
+gem 'cocoon'
+gem 'puma', '~> 3.11'
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'bootstrap', '~> 4.2.1'
+gem "font-awesome-rails"
+gem 'bundler'
