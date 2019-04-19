@@ -79,3 +79,4 @@ gem 'jquery-rails'
 gem 'bootstrap', '~> 4.2.1'
 gem "font-awesome-rails"
 gem 'bundler'
+gem 'rspec-rails'
