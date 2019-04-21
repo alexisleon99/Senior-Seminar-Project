@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_022019) do
+ActiveRecord::Schema.define(version: 2019_04_21_184356) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -84,7 +84,9 @@ ActiveRecord::Schema.define(version: 2019_04_21_022019) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "departments_id"
+    t.integer "travel_forms_id"
     t.index ["departments_id"], name: "index_request_forms_on_departments_id"
+    t.index ["travel_forms_id"], name: "index_request_forms_on_travel_forms_id"
   end
 
   create_table "super_accounts", force: :cascade do |t|
