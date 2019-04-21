@@ -27,7 +27,7 @@
       <th>Amount</th>
     </tr>
    </thread>
-   <tbody class= "expenses">
+   <tbody class= "expense">
     <%= f.fields_for :expenses do |builder| %>
       <%= render 'expense_fields', f: builder %>
       <% end %>
@@ -39,15 +39,16 @@
     <div class="controls">
       <%= f.select(:departments, options_for_select([['R&D', 'R&D'], ['IT', 'IT']])) %>
     </div>
-  </div>
+  </div></br>
 
 
-
+  <div class="links">
+        <%= link_to_add_association 'Add Expense', f, :expenses, class: 'btn btn-dark' , data: {
+          association_insertion_node: '.expenses', association_insertion_method: :append } %>
+  </div></br>
 
   <div class="form-actions">
-    <%= f.button :submit %>
-    <%= link_to_add_association 'Add Expense', f, :expenses, class: 'btn btn-primary' , data: {
-          association_insertion_node: '.expenses', association_insertion_method: :append } %>
+    <%= f.button :submit, class: 'btn btn-dark' %>
 </div>
 </div>
 <% end %>
