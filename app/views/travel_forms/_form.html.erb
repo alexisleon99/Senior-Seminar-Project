@@ -41,6 +41,7 @@
     </div>
   </div></br>
 
+<<<<<<< HEAD
 
   <div class="links">
         <%= link_to_add_association 'Add Expense', f, :expenses, class: 'btn btn-dark' , data: {
@@ -51,4 +52,28 @@
     <%= f.button :submit, class: 'btn btn-dark' %>
 </div>
 </div>
+=======
+  <div class="field">
+    <%= form.label :Other %>
+    <%= form.text_field :Other %>
+  </div>
+
+  <div>
+    <p><strong>Addresses:</strong></p>
+
+    <div id="request_forms">
+      <%= form.fields_for :request_forms do |request_form| %>
+        <%= render 'form', forms: travel_form %>
+      <% end %>
+
+      <div class="links">
+        <%= link_to_add_association 'add address', form, :request_forms %>
+      </div>
+    </div>
+  </div>
+
+
+  </div>
+  </div>
+>>>>>>> 32711c6850a21d0fa4a8520f14cac70f367aa372
 <% end %>

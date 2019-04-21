@@ -1,3 +1,5 @@
+
+  <div class="nested-fields">
 <%= form_with(model: request_form, local: true) do |form| %>
   <% if request_form.errors.any? %>
     <div id="error_explanation">
@@ -11,6 +13,7 @@
     </div>
   <% end %>
   
+<<<<<<< HEAD
   <div class="field">
     <%= label_tag 'Department_rd','Research & Development' %>
     <%= check_box_tag 'request_form[Department][]', 'Research & Development', checked('Research & Development'), id: 'Department_rd' %>
@@ -38,8 +41,13 @@
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>
+=======
+
+>>>>>>> 32711c6850a21d0fa4a8520f14cac70f367aa372
   
+
   <div class="field">
+<<<<<<< HEAD
     <%= label_tag 'Department_it','Information Technology' %>
     <%= check_box_tag 'request_forms[Department][]', 'Information Technology', checked('Information Technology'), id: 'Department_it' %>
     <%= form.label :amount %>
@@ -49,6 +57,13 @@
     <div class="field">
     <%= label_tag 'Department_legal','Legal' %>
     <%= check_box_tag 'request_forms[Department][]', 'Legal', checked('Legal'), id: 'Department_legal' %>
+=======
+  <%= form.label "Department" %>
+  <%= form.collection_select(:departments_id, Department.all, :id, :names, { :prompt => 'Select a Department', :selected => @request_form.departments_id }, { class: 'form-control' }) %>
+  </div>
+
+  <div class="field">
+>>>>>>> 32711c6850a21d0fa4a8520f14cac70f367aa372
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>
@@ -56,4 +71,8 @@
   <div class="actions">
     <%= form.submit %>
   </div>
+  <%= form.check_box :_destroy %>
+<%= link_to_remove_association "remove address", form%>
 <% end %>
+
+</div>
