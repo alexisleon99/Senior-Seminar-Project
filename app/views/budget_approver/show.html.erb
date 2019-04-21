@@ -11,13 +11,8 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-<<<<<<< HEAD
-        <td><%= button_to "Approve", budget_approver_pages_path, method: :get%></td>
-        <td><%= button_to "Deny", travel_form_path, method: :get%></td>
-=======
-        <td><%=button_to "Approve", travel_form_path, method: :get%></td>
-        <td><%=button_to "Deny", travel_form_path, method: :put%></td>
->>>>>>> 0c16db05004a3244d59adc60ae536c12b0ce7c14
+        <td><%=button_to "Approve", travel_form, method: :get%></td>
+        <td><%=button_to "Deny", travel_form_path, method: :get%></td>
       </tr>
     </div>
     <% end %>

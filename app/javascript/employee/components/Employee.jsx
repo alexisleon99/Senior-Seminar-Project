@@ -3,7 +3,7 @@ import axios from 'axios';
 
 export default class Employee extends React.Component {
 
-    state = { employee_pages: [] };
+    state = { employees: [] };
 
     componentDidMount = () => {
         var self = this;
@@ -12,7 +12,7 @@ export default class Employee extends React.Component {
         axios.get('/')
             .then(function (response) {
                 console.log(response.data);
-                self.setState({ employee_pages: response.data })
+                self.setState({ employees: response.data })
             })
             .catch(function (error) {
                 console.log(error);
@@ -23,7 +23,7 @@ export default class Employee extends React.Component {
         return(
             <div>
                 <h3>
-                    There are {this.state.employee_pages.length} employees waiting to be approved.
+                    There are {this.state.employees.length} employees waiting to be approved.
                 </h3>
             </div>
         );
