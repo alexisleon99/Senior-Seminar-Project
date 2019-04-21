@@ -94,6 +94,6 @@ class TravelFormsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def travel_form_params
       params.require(:travel_form).permit(:First_Name, :Last_Name, :Department, :Start_Date, :End_Date, :Location, :Flight_Price, :Hotel_Price, :Mileage, :Transportation, :Other,
-                                             expenses_attributes: [:id, :travel_form_id, :flight, :transportation, :hotel, :food] )
+                                             expenses_attributes: Expense.attribute_names.map(&:to_sym).push(:destroy) )
     end
 end

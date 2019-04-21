@@ -1,4 +1,4 @@
-<%= form_with(model: travel_form, local: true) do |form| %>
+<%= form_with(model: travel_form, local: true) do |f| %>
   <% if travel_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(travel_form.errors.count, "error") %> prohibited this travel_form from being saved:</h2>
@@ -21,32 +21,32 @@
  <table class='table'>
    <thead>
     <tr>
+      <th></th>
       <th>Expense</th>
       <th>Department</th>
       <th>Amount</th>
     </tr>
    </thread>
- <tbody class= "expenses">
-    <%= form.fields_for :expenses do |builder| %>
-      <%= render 'expense_fields', form: builder %>
+   <tbody class= "expenses">
+    <%= f.fields_for :expenses do |builder| %>
+      <%= render 'expense_fields', f: builder %>
       <% end %>
     </tbody>
-    
   </table>
     
   <div class="departments">
-    <%= form.label "Departments", class: 'control-label' %>
+    <%= f.label "Departments", class: 'control-label' %>
     <div class="controls">
-      <%= form.select(:departments, options_for_select([['R&D', 'R&D'], ['IT', 'IT']])) %>
+      <%= f.select(:departments, options_for_select([['R&D', 'R&D'], ['IT', 'IT']])) %>
     </div>
   </div>
 
 
 
 
-  <div class="actions">
-    <%= form.submit %>
-    <%= link_to_add_association "Add Expense", form, :expenses, class: 'btn btn-primary' , data: {
+  <div class="form-actions">
+    <%= f.button :submit %>
+    <%= link_to_add_association 'Add Expense', f, :expenses, class: 'btn btn-primary' , data: {
           association_insertion_node: '.expenses', association_insertion_method: :append } %>
 </div>
 </div>

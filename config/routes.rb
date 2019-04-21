@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :expense_items
   namespace :admin do
       resources :accounts
       resources :budget_approvers
