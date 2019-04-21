@@ -18,72 +18,36 @@
     </div>
   </div>
 
-  <div class="field">
-    <%= form.label :First_Name %>
-    <%= form.text_field :First_Name %>
+ <table class='table'>
+   <thead>
+    <tr>
+      <th>Expense</th>
+      <th>Department</th>
+      <th>Amount</th>
+    </tr>
+   </thread>
+ <tbody class= "expenses">
+    <%= form.fields_for :expenses do |builder| %>
+      <%= render 'expense_fields', form: builder %>
+      <% end %>
+    </tbody>
+    
+  </table>
+    
+  <div class="departments">
+    <%= form.label "Departments", class: 'control-label' %>
+    <div class="controls">
+      <%= form.select(:departments, options_for_select([['R&D', 'R&D'], ['IT', 'IT']])) %>
+    </div>
   </div>
 
-  <div class="field">
-    <%= form.label :Last_Name %>
-    <%= form.text_field :Last_Name %>
-  </div>
-  </div>
 
-  <div class="field">
-    <%= form.label :Department %>
-    <%= form.text_field :Department %>
-  </div>
 
-  <div class="field">
-    <%= form.label :Start_Date %>
-    <%= form.date_select :Start_Date %>
-  </div>
-
-  <div class="field">
-    <%= form.label :End_Date %>
-    <%= form.date_select :End_Date %>
-  </div>
-  
-  <div class="field">
-    <%= form.label :Location %>
-    <%= form.text_field :Location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Flight_Price %>
-    <%= form.text_field :Flight_Price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Hotel_Price %>
-    <%= form.text_field :Hotel_Price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Mileage %>
-    <%= form.text_field :Mileage %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Transportation %>
-    <%= form.text_field :Transportation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Other %>
-    <%= form.text_field :Other %>
-  </div>
-  <div class="field">
-
-</div>
-
-<div class="field">
-  
-</div>
 
   <div class="actions">
     <%= form.submit %>
-  </div>
+    <%= link_to_add_association "Add Expense", form, :expenses, class: 'btn btn-primary' , data: {
+          association_insertion_node: '.expenses', association_insertion_method: :append } %>
 </div>
 </div>
 <% end %>
