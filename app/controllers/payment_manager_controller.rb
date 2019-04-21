@@ -11,6 +11,8 @@ class PaymentManagerController < ApplicationController
   # GET /payment_manager/1.json
   def show
     @expense_reports = ExpenseReport.all
+    @travel_forms = TravelForm.all
+
   end
 
   # GET /payment_manager/new

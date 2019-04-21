@@ -23,6 +23,7 @@ class TravelFormsController < ApplicationController
   def edit
   end
   
+<<<<<<< HEAD
   def approved
       @travel_forms = @travel_forms.id
       @travel_forms.update_attributes(:status, "Approved")
@@ -40,6 +41,13 @@ class TravelFormsController < ApplicationController
   # def denied
 
   # end
+=======
+  def approve
+    @travel_form = TravelForm.all
+		@travel_forms = @travel_forms.id
+		@travel_forms.update_attribute(:status, "Approved")
+	  end
+>>>>>>> 8b3a5ddfda4d9af234e08ebe0f47f8be56101d7a
 
   # POST /travel_forms
   # POST /travel_forms.json

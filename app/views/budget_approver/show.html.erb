@@ -9,10 +9,17 @@
     <div>
       <tr>
       <td> Travel form </td>
+      
         <td><%= travel_form.id %></td>
+        <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
+<<<<<<< HEAD
         <td><%=button_to "Approve", travel_form, method: :get%></td>
         <td><%=button_to "Deny", travel_form_path, method: :get%></td>
+=======
+        <td><%=button_to "Approve", travel_form_path, method: :get%></td>
+        <td><%=button_to "Deny", travel_form_path, method: :put%></td>
+>>>>>>> 8b3a5ddfda4d9af234e08ebe0f47f8be56101d7a
       </tr>
     </div>
     <% end %>
