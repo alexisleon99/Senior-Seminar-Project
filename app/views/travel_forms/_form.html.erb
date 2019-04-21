@@ -74,16 +74,17 @@
     <%= form.text_field :Other %>
   </div>
 
+
   <div>
   <p><strong>request forms :</strong></p>
 
-  <div id="request forms">
+  <div id="request_forms">
     <%= form.fields_for :request_forms do |request_form| %>
       <%= render 'travel_forms_form', form: request_form %>
     <% end %>
 
     <div class="links">
-      <%= link_to_add_association 'add address', travel_form, :request_forms_id %>
+      <%= link_to_add_association 'add address', travel_form.id, :request_forms %>
     </div>
   </div>
 </div>
