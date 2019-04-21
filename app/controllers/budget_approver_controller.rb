@@ -21,15 +21,18 @@ class BudgetApproverController < ApplicationController
   # GET /budget_approvers/1/edit
   def edit
   end
+  
   def approve
     @travel_forms = TravelForm.all
 		@travel_forms = @travel_forms.id
 		@travel_forms.update_attribute(:status, "Approved")
-	  end
+  end
 
-  # def denied
-
-  # end
+  def denied
+    @travel_forms = TravelForm.all
+		@travel_forms = @travel_forms.id
+		@travel_forms.update_attribute(:status, "Denied")
+  end
 
   # POST /budget_approvers
   # POST /budget_approvers.json

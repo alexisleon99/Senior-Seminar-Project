@@ -13,8 +13,8 @@
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%=button_to "Approve", budget_approver_url, :status => "Approved", :method => :put, class: 'btn btn-dark' %></td>
-        <td><%=button_to "Deny", budget_approver_url, :status => "Denied", method: :get, class: 'btn btn-dark'%></td>
+        <td><%=button_to "Approve", budget_approver_url(), method: :get, class: 'btn btn-dark' %></td>
+        <td><%=button_to "Deny", budget_approver_url(), travel_form.status => "Denied", method: :get, class: 'btn btn-dark'%></td>
       </tr>
     </div>
     <% end %>
