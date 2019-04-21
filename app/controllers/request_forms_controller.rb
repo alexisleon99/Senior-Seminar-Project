@@ -5,6 +5,7 @@ class RequestFormsController < ApplicationController
   # GET /request_forms.json
   def index
     @request_forms = RequestForm.all
+    @departments = RequestForm.all
   end
 
   # GET /request_forms/1
@@ -15,6 +16,7 @@ class RequestFormsController < ApplicationController
   # GET /request_forms/new
   def new
     @request_form = RequestForm.new
+    
   end
 
   # GET /request_forms/1/edit
@@ -25,7 +27,7 @@ class RequestFormsController < ApplicationController
   # POST /request_forms.json
   def create
     @request_form = RequestForm.new(request_form_params)
-
+  
     respond_to do |format|
       if @request_form.save
         format.html { redirect_to root_path, notice: 'Request form was successfully created.' }
