@@ -1,6 +1,5 @@
-<%= form_with(model: travel_form, local: true) do |form| %>
-
-  <% if travel_form.errors.any? %>
+<%= form_with(model: @travel_form, local: true) do |form| %>
+  <% if @travel_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(travel_form.errors.count, "error") %> prohibited this travel_form from being saved:</h2>
 
