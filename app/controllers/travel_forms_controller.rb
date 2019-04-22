@@ -5,7 +5,6 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms.json
   def index
     @travel_forms = TravelForm.all
-
   end
 
   # GET /travel_forms/1
@@ -37,7 +36,7 @@ class TravelFormsController < ApplicationController
     @travel_form.account_id = @account.id
     respond_to do |format|
       if @travel_form.save
-        format.html { redirect_to request_forms_path, notice: 'Travel form was successfully created.' }
+        format.html { redirect_to new_request_form_path, notice: 'Travel form was successfully created.' }
         format.json { render :show, status: :created, location: @travel_form }
       else
         format.html { render :new }
