@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_21_184356) do
+ActiveRecord::Schema.define(version: 2019_04_22_145814) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -79,6 +79,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_184356) do
     t.string "account_id"
   end
 
+<<<<<<< HEAD
   create_table "expenses", force: :cascade do |t|
     t.integer "travel_form_id"
     t.datetime "created_at", null: false
@@ -91,6 +92,8 @@ ActiveRecord::Schema.define(version: 2019_04_21_184356) do
     t.datetime "updated_at", null: false
   end
 
+=======
+>>>>>>> 22b656c8d71f27c6f7aa7c15a1c69d03c73551b5
   create_table "payment_managers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_04_21_184356) do
     t.datetime "updated_at", null: false
     t.integer "departments_id"
     t.integer "travel_forms_id"
+    t.integer "travel_form_id"
     t.index ["departments_id"], name: "index_request_forms_on_departments_id"
     t.index ["travel_forms_id"], name: "index_request_forms_on_travel_forms_id"
   end
