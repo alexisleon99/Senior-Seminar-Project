@@ -14,8 +14,6 @@
   <% end %>
   
 
-  
-
   <div class="field">
   <%= form.label "Department" %>
   <%= form.collection_select(:departments_id, Department.all, :id, :names, { :prompt => 'Select a Department', :selected => @request_form.departments_id }, { class: 'form-control' }) %>

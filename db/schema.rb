@@ -79,7 +79,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.string "account_id"
   end
 
-<<<<<<< HEAD
   create_table "expenses", force: :cascade do |t|
     t.integer "travel_form_id"
     t.datetime "created_at", null: false
@@ -92,8 +91,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.datetime "updated_at", null: false
   end
 
-=======
->>>>>>> 22b656c8d71f27c6f7aa7c15a1c69d03c73551b5
   create_table "payment_managers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false

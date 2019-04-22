@@ -5,7 +5,6 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms.json
   def index
     @travel_forms = TravelForm.all
-
   end
 
   # GET /travel_forms/1
