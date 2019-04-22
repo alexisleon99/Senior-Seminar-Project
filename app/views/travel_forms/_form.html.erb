@@ -1,4 +1,4 @@
-<%= form_with(model: travel_form, local: true) do |f| %>
+<%= form_with(model: travel_form, local: true) do |form| %>
   <% if travel_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(travel_form.errors.count, "error") %> prohibited this travel_form from being saved:</h2>
@@ -18,41 +18,57 @@
     </div>
   </div>
 
- <table class='table'>
-   <thead>
-    <tr>
-      <th></th>
-      <th>Expense</th>
-      <th>Department</th>
-      <th>Amount</th>
-    </tr>
-   </thread>
-   <tbody class= "expense">
-    <%= f.fields_for :expenses do |builder| %>
-      <%= render 'expense_fields', f: builder %>
-      <% end %>
-    </tbody>
-  </table>
-    
-  <div class="departments">
-    <%= f.label "Departments", class: 'control-label' %>
-    <div class="controls">
-      <%= f.select(:departments, options_for_select([['R&D', 'R&D'], ['IT', 'IT']])) %>
-    </div>
-  </div></br>
+  <div class="field">
+    <%= form.label :First_Name %>
+    <%= form.text_field :First_Name %>
+  </div>
 
-<<<<<<< HEAD
+  <div class="field">
+    <%= form.label :Last_Name %>
+    <%= form.text_field :Last_Name %>
+  </div>
+  </div>
 
-  <div class="links">
-        <%= link_to_add_association 'Add Expense', f, :expenses, class: 'btn btn-dark' , data: {
-          association_insertion_node: '.expenses', association_insertion_method: :append } %>
-  </div></br>
+  <div class="field">
+    <%= form.label :Department %>
+    <%= form.text_field :Department %>
+  </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, class: 'btn btn-dark' %>
-</div>
-</div>
-=======
+  <div class="field">
+    <%= form.label :Start_Date %>
+    <%= form.date_select :Start_Date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :End_Date %>
+    <%= form.date_select :End_Date %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :Location %>
+    <%= form.text_field :Location %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Flight_Price %>
+    <%= form.text_field :Flight_Price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Hotel_Price %>
+    <%= form.text_field :Hotel_Price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mileage %>
+    <%= form.text_field :Mileage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Transportation %>
+    <%= form.text_field :Transportation %>
+  </div>
+
   <div class="field">
     <%= form.label :Other %>
     <%= form.text_field :Other %>
@@ -75,5 +91,4 @@
 
   </div>
   </div>
->>>>>>> 32711c6850a21d0fa4a8520f14cac70f367aa372
 <% end %>

@@ -7,6 +7,11 @@ class BudgetApproverController < ApplicationController
     @budget_approvers = BudgetApprover.all
   end
 
+  def approved
+      @travel_forms = @travel_forms.id
+      @travel_forms.update_attributes(:status, "Approved")
+  end
+  
   # GET /budget_approvers/1
   # GET /budget_approvers/1.json
   def show
@@ -21,24 +26,11 @@ class BudgetApproverController < ApplicationController
   # GET /budget_approvers/1/edit
   def edit
   end
-  
-  def approve
-    @travel_forms = TravelForm.all
-		@travel_forms = @travel_forms.id
-		@travel_forms.update_attribute(:status, "Approved")
-  end
-
-  def denied
-    @travel_forms = TravelForm.all
-		@travel_forms = @travel_forms.id
-		@travel_forms.update_attribute(:status, "Denied")
-  end
 
   # POST /budget_approvers
   # POST /budget_approvers.json
   def create
     @budget_approver = BudgetApprover.new(budget_approver_params)
-
     respond_to do |format|
       if @budget_approver.save
         format.html { redirect_to @budget_approver, notice: 'Budget approver page was successfully created.' }
@@ -62,6 +54,11 @@ class BudgetApproverController < ApplicationController
         format.json { render json: @budget_approver.errors, status: :unprocessable_entity }
       end
     end
+  end
+  
+  def denied
+    @travel_forms = @travel_forms.id
+    @travel_forms.update_attributes(:status, "Denied")
   end
 
   # DELETE /budget_approvers/1
