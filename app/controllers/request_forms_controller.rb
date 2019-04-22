@@ -11,7 +11,7 @@ class RequestFormsController < ApplicationController
   # GET /request_forms/1
   # GET /request_forms/1.json
   def show
- 
+    @travel_forms = RequestForm.all
   end
 
   # GET /request_forms/new
@@ -71,6 +71,6 @@ class RequestFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_form_params
-      params.require(:request_form).permit(:amount,:departments_id, Department:[])
+      params.require(:request_form).permit(:amount,:departments_id, :travel_form_id, Department:[])
     end
 end
