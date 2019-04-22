@@ -1,4 +1,5 @@
 <%= form_with(model: travel_form, local: true) do |form| %>
+
   <% if travel_form.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(travel_form.errors.count, "error") %> prohibited this travel_form from being saved:</h2>
@@ -75,15 +76,14 @@
   </div>
 
   <div>
-    <p><strong>Addresses:</strong></p>
+    <p><strong>Requests:</strong></p>
 
     <div id="request_forms">
       <%= form.fields_for :request_forms do |request_form| %>
-        <%= render 'form', forms: travel_form %>
+        <%= render 'form', form: travel_form %>
       <% end %>
-
       <div class="links">
-        <%= link_to_add_association 'add address', form, :request_forms %>
+      <%= link_to_add_association 'Add Request', form, :request_forms %>
       </div>
     </div>
   </div>

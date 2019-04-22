@@ -11,12 +11,12 @@ class RequestFormsController < ApplicationController
   # GET /request_forms/1
   # GET /request_forms/1.json
   def show
+ 
   end
 
   # GET /request_forms/new
   def new
     @request_form = RequestForm.new
-    
   end
 
   # GET /request_forms/1/edit
