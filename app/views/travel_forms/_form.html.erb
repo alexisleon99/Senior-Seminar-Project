@@ -27,7 +27,7 @@
     <%= form.label :Last_Name %>
     <%= form.text_field :Last_Name %>
   </div>
-  </div>
+
 
   <div class="field">
     <%= form.label :Department %>
@@ -77,10 +77,11 @@
   <div>
     <p><strong>Addresses:</strong></p>
 
-    <div id="request_forms">
-      <%= form.fields_for :request_forms do |request_form| %>
-        <%= render 'form', forms: travel_form %>
+    <tbody class= "request_forms">
+    <%= form.fields_for :request_forms do |builder| %>
+      <%= render 'form', form: builder %>
       <% end %>
+    </tbody>
 
       <div class="links">
         <%= link_to_add_association 'add address', form, :request_forms %>
