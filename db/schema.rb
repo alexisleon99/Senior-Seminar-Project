@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_145814) do
+ActiveRecord::Schema.define(version: 2019_04_21_184356) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -28,11 +28,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.index ["reset_password_token"], name: "index_accounts_on_reset_password_token", unique: true
   end
 
-  create_table "budget_approver_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "budget_approvers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -44,11 +39,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "budget", default: 5000
-  end
-
-  create_table "employee_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "employees", force: :cascade do |t|
@@ -86,11 +76,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.index ["travel_form_id"], name: "index_expenses_on_travel_form_id"
   end
 
-  create_table "payment_manager_pages", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "payment_managers", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -104,7 +89,6 @@ ActiveRecord::Schema.define(version: 2019_04_22_145814) do
     t.datetime "updated_at", null: false
     t.integer "departments_id"
     t.integer "travel_forms_id"
-    t.integer "travel_form_id"
     t.index ["departments_id"], name: "index_request_forms_on_departments_id"
     t.index ["travel_forms_id"], name: "index_request_forms_on_travel_forms_id"
   end

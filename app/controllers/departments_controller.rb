@@ -4,12 +4,14 @@ class DepartmentsController < ApplicationController
   # GET /departments
   # GET /departments.json
   def index
+    @request_forms = RequestForm.all
     @departments = Department.all
   end
 
   # GET /departments/1
   # GET /departments/1.json
   def show
+    @travel_forms = RequestForm.all
   end
 
   # GET /departments/new
