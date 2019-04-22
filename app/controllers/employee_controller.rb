@@ -13,6 +13,7 @@ class EmployeeController < ApplicationController
   def show
     @travel_forms = TravelForm.all
     @expense_reports = ExpenseReport.all
+    @request_forms = RequestForm.all
   end
 
   # GET /employee/new

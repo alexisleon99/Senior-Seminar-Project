@@ -1,5 +1,5 @@
 
-  <div class="nested-fields">
+<div class="nested-fields">
 <%= form_with(model: request_form, local: true) do |form| %>
   <% if request_form.errors.any? %>
     <div id="error_explanation">
@@ -24,11 +24,21 @@
     <%= form.text_field :amount %>
   </div>
 
+  <div class="field">
+    <%= form.label :travel_form_id%>
+    <%= form.number_field :travel_form_id %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
-  <%= form.check_box :_destroy %>
-<%= link_to_remove_association "remove address", form%>
+
+
 <% end %>
 
+<<<<<<< HEAD
 </div>
+=======
+</div>
+
+>>>>>>> c7989ee38ec597b60e9fb95e4522d679693288d0
