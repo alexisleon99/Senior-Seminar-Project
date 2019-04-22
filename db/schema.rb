@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_21_184356) do
-=======
 ActiveRecord::Schema.define(version: 2019_04_22_200052) do
->>>>>>> a911aee7020700cbd2a6772eaa0a98a11efd9324
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -93,6 +89,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_200052) do
     t.datetime "updated_at", null: false
     t.integer "departments_id"
     t.integer "travel_forms_id"
+    t.integer "travel_form_id"
     t.index ["departments_id"], name: "index_request_forms_on_departments_id"
     t.index ["travel_forms_id"], name: "index_request_forms_on_travel_forms_id"
   end

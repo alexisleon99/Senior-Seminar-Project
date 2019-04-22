@@ -9,15 +9,16 @@
     <div>
       <tr>
       <td> Travel form </td>
-      
+         <% if current_account.department_id == @request_forms.department_id %>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%=button_to "Approve", budget_approver_url, method: :get, class: 'btn btn-dark' %></td>
-        <td><%=button_to "Deny", budget_approver_url, method: :put, class: 'btn btn-dark'%></td>
+        <td><%=button_to "Approve", budget_approver_url, method: :get%></td>
+        <td><%=button_to "Deny", budget_approver_url, method: :put%></td>
       </tr>
     </div>
     <% end %>
+  <% end %>
   </tbody>
 </table>
 
