@@ -14,18 +14,16 @@ Rails.application.routes.draw do
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
   
-  resources :payment_manager do
-    get :approve
-    put :denied
-    root to: "payment_manager#index"
-  end
- #   resources :budget_approver do
-  #  get :approve
-   # root to: "budget_approver#approve"
+  #resources :payment_manager do
+   # get :approve
+    #put :denied
+    #root to: "payment_manager#index"
   #end
   #resources :budget_approver do
-   # get :denied
-    #root to: 'budget_approver_controller#denied'
+   # get :approve
+    #get :denied
+    #root to: "budget_approver#approve"
+    #root to: "budget_approver#denied"
   #end
 
 

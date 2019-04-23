@@ -16,6 +16,16 @@ class BudgetApproverController < ApplicationController
     @budget_approver = BudgetApprover.all
   end
   
+ # def approve
+  #    travel_forms.status = "approved"
+   #   travel_forms.update_attributes(:status, travel_forms.status)
+  #end
+  
+   # def denied
+     # travel_forms.status = "denied"
+    #  travel_forms.update_attributes(:status, travel_forms.status)
+    #end
+  
 
   # GET /budget_approvers/new
   def new
@@ -54,7 +64,6 @@ class BudgetApproverController < ApplicationController
       end
     end
   end
-  
 
   # DELETE /budget_approvers/1
   # DELETE /budget_approvers/1.json

@@ -10,7 +10,6 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1
   # GET /travel_forms/1.json
   def show
-    @travel_form.update_attribute(:status, "Approved")
   end
 
   # GET /travel_forms/new
