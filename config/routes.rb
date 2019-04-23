@@ -23,10 +23,8 @@ Rails.application.routes.draw do
     put :denied
   end
 
-
   resources :payment_manager
   resources :budget_approver
-
   resources :request_forms
   resources :expense_reports
   resources :employee

@@ -16,6 +16,7 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/new
   def new
     @travel_form = TravelForm.new
+    @department = Department.new
   end
 
   # GET /travel_forms/1/edit
