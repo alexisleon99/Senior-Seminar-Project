@@ -16,15 +16,6 @@ class BudgetApproverController < ApplicationController
     @budget_approver = BudgetApprover.all
   end
   
- # def approve
-  #    travel_forms.status = "approved"
-   #   travel_forms.update_attributes(:status, travel_forms.status)
-  #end
-  
-   # def denied
-     # travel_forms.status = "denied"
-    #  travel_forms.update_attributes(:status, travel_forms.status)
-    #end
   
 
   # GET /budget_approvers/new
