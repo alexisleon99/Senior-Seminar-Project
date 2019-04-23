@@ -54,10 +54,6 @@ class BudgetApproverController < ApplicationController
     end
   end
   
-  def denied
-    @travel_forms = @travel_forms.id
-    @travel_forms.update_attributes(:status, "Denied")
-  end
 
   # DELETE /budget_approvers/1
   # DELETE /budget_approvers/1.json

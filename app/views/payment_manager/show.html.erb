@@ -31,7 +31,7 @@
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
-        <td><%= button_to "Approve", payment_manager_path, travel_form.status == "Approved" %></td>
+        <td><%= button_to "Approve", payment_manager_path, method: :get %></td>
         <td><%= button_to "Deny",payment_manager_path, method: :get%></td>
       </tr>
     <% end %>
