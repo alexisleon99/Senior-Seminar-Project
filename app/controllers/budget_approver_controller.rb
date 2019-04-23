@@ -13,6 +13,7 @@ class BudgetApproverController < ApplicationController
     @travel_forms = TravelForm.all
     @expense_reports = ExpenseReport.all
     @request_forms = RequestForm.all
+    @budget_approver = BudgetApprover.all
   end
   
 
