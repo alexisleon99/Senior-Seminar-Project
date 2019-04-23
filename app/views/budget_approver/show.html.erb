@@ -1,24 +1,49 @@
 <p id="notice"><%= notice %></p>
 <div class="col-lg-12 text-center">
-  <h1 class="mt-5"> Budget Approver </h1>
+  <h1 class="mt-5"> Budget Approver Page</h1>
 </div>
-<h2 class="mt-5"> Travel Forms</h2>
+
+<h2 class="mt-5"> Travel Form</h2>
   <table>
+
   <tbody>
     <% @travel_forms.each do |travel_form| %>
+      <% @request_forms.each do |request_form| %>
+        <% if request_form.travel_form_id == travel_form.id%>
     <div>
       <tr>
       <td> Travel form </td>
-         <% if current_account.department_id == @request_forms.department_id %>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%=button_to "Approve", budget_approver_url, method: :get%></td>
-        <td><%=button_to "Deny", budget_approver_url, method: :put%></td>
+        <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
+        <td><%= link_to "Approve", budget_approver_path, get: :approve class: "button" %></td>
+      <tr>
+        <td> Expense Form </td>
+        <td><%= request_form.travel_form_id %></td>
+        <td></td>
+         <td><%= link_to 'Review Expense Form', request_form %></td>
+      </tr>
+    <% end %>
+    <%end%>
       </tr>
     </div>
+    <%end%>
+  </tbody>
+</table>
+<%= link_to 'New Travel Form', new_travel_form_path %>
+<h2 class="mt-5"> Expense Reports </h2>
+<table>
+    <tbody>
+    <% @expense_reports.each do |expense_report| %>
+      <tr>
+        <td> Expense Form </td>
+        <td><%= expense_report.id %></td>
+        <td><%= expense_report.status %></td>
+        <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <td><%= link_to 'Edit', edit_request_form_path(expense_report.id) %></td>
+      </tr>
     <% end %>
-  <% end %>
   </tbody>
 </table>
 

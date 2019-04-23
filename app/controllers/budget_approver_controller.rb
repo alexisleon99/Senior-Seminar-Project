@@ -6,17 +6,20 @@ class BudgetApproverController < ApplicationController
   def index
     @budget_approvers = BudgetApprover.all
   end
-
-  def approved
+  
+    # GET /budget_approvers/1
+  # GET /budget_approvers/1.json
+  def show
+    @travel_forms = TravelForm.all
+    @expense_reports = ExpenseReport.all
+    @request_forms = RequestForm.all
+  end
+  
+  def approve
       @travel_forms = @travel_forms.id
       @travel_forms.update_attributes(:status, "Approved")
   end
   
-  # GET /budget_approvers/1
-  # GET /budget_approvers/1.json
-  def show
-      @travel_forms = TravelForm.all
-  end
 
   # GET /budget_approvers/new
   def new

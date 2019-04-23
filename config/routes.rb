@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       root to: "accounts#index"
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
-
+  
   resources :payment_manager do
     get :approve
     put :denied
@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   resources :budget_approver do
     get :approve
     put :denied
+    root to: "budget_approver#index"
   end
 
 
@@ -33,7 +34,7 @@ Rails.application.routes.draw do
   resources :employee
   resources :travel_forms
   resources :departments
- get '/Approve', to: 'travel_forms#approved', as: 'Approve'
+ get 'budget_approver/approve', to: 'budget_approver_controller#approved'
  root 'employee#index'
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
