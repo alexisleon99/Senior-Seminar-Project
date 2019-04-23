@@ -15,11 +15,6 @@ class BudgetApproverController < ApplicationController
     @request_forms = RequestForm.all
   end
   
-  def approve
-      @travel_forms = @travel_forms.id
-      @travel_forms.update_attributes(:status, "Approved")
-  end
-  
 
   # GET /budget_approvers/new
   def new

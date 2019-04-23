@@ -19,11 +19,14 @@ Rails.application.routes.draw do
     put :denied
     root to: "payment_manager#index"
   end
-  resources :budget_approver do
-    get :approve
-    put :denied
-    root to: "budget_approver#index"
-  end
+ #   resources :budget_approver do
+  #  get :approve
+   # root to: "budget_approver#approve"
+  #end
+  #resources :budget_approver do
+   # get :denied
+    #root to: 'budget_approver_controller#denied'
+  #end
 
 
   resources :payment_manager
@@ -34,7 +37,9 @@ Rails.application.routes.draw do
   resources :employee
   resources :travel_forms
   resources :departments
- get 'budget_approver/approve', to: 'budget_approver_controller#approved'
+  #get "/budget_approver/denied" => "budget_approver#denied"
+ #get '/budget_approvers/approve', to: 'budget_approver_controller#approve', as: :approve
+ #get '/budget_approver/:budget_approver/denied/id', to: 'budget_approver_controller#denied#id', as: :denied
  root 'employee#index'
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'

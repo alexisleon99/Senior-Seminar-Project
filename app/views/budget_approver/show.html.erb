@@ -17,7 +17,8 @@
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
         <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
-        <td><%= link_to "Approve", budget_approver_path, get: :approve class: "button" %></td>
+        <td><%= button_to "Approve", budget_approver_path, travel_form.status => 'Approved' %></td>
+        <td><%= button_to "Deny",budget_approver_path, travel_form.status => 'Denied' %></td>
       <tr>
         <td> Expense Form </td>
         <td><%= request_form.travel_form_id %></td>

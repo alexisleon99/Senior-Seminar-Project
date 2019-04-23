@@ -1,31 +1,40 @@
 <p id="notice"><%= notice %></p>
+<div class="col-lg-12 text-center">
+  <h1 class="mt-5"> Payment Manager</h1>
+</div>
+
+<h2 class="mt-5"> Travel Form</h2>
+  <table>
+
+  <tbody>
+    <% @travel_forms.each do |travel_form| %>
+      <%if travel_form.account_id == current_account.id%>
+    <div>
+      <tr>
+      <td> Travel form </td>
+        <td><%= travel_form.id %></td>
+        <td><%= travel_form.status %></td>
+        <td><%= link_to 'Review Travel Form', travel_form %></td>
+    <%end%>
+      </tr>
+    </div>
+    <%end%>
+  </tbody>
+</table>
+<%= link_to 'New Travel Form', new_travel_form_path %>
 <h2 class="mt-5"> Expense Reports </h2>
 <table>
-<tbody>
-<% @travel_forms.each do |travel_form| %>
-  <%if travel_form.status == "Approved"%>
-<div>
-  <tr>
-  <td> Travel form </td>
-    <td><%= travel_form.id %></td>
-    <td><%= travel_form.status %></td>
-  </tr>
-</div>
-<%end%>
-<% end %>
-</tbody>
     <tbody>
     <% @expense_reports.each do |expense_report| %>
-      <%if expense_report.status == "Approved"%>
       <tr>
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
+        <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
-        <td><%=button_to "Approve", travel_form_path, method: :update%></td>
-        <td><%=button_to "Deny", travel_form_path, method: :put%></td>
+        <td><%= button_to "Approve", payment_manager_path, travel_form.status == "Approved" %></td>
+        <td><%= button_to "Deny",payment_manager_path, method: :get%></td>
       </tr>
     <% end %>
-    <%end%>
   </tbody>
 </table>
 <div>
