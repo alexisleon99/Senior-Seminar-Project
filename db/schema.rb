@@ -47,6 +47,12 @@ ActiveRecord::Schema.define(version: 2019_04_22_200052) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "expense_items", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "expense_reports", force: :cascade do |t|
     t.string "First_name"
     t.string "Last_Name"
@@ -61,6 +67,13 @@ ActiveRecord::Schema.define(version: 2019_04_22_200052) do
     t.datetime "updated_at", null: false
     t.string "status", default: "pending"
     t.string "account_id"
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.integer "travel_form_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["travel_form_id"], name: "index_expenses_on_travel_form_id"
   end
 
   create_table "payment_managers", force: :cascade do |t|

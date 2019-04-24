@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Expense Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @expense_items.each do |expense_item| %>
+      <tr>
+        <td><%= expense_item.name %></td>
+        <td><%= link_to 'Show', expense_item %></td>
+        <td><%= link_to 'Edit', edit_expense_item_path(expense_item) %></td>
+        <td><%= link_to 'Destroy', expense_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Expense Item', new_expense_item_path %>

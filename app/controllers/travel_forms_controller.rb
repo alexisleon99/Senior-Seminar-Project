@@ -10,7 +10,6 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1
   # GET /travel_forms/1.json
   def show
-    @travel_form.update_attribute(:status, "Approved")
   end
 
   # GET /travel_forms/new
@@ -22,12 +21,6 @@ class TravelFormsController < ApplicationController
   # GET /travel_forms/1/edit
   def edit
   end
-  
-  def approve
-    @travel_form = TravelForm.all
-		@travel_forms = @travel_forms.id
-		@travel_forms.update_attribute(:status, "Approved")
-	  end
 
   # POST /travel_forms
   # POST /travel_forms.json
@@ -79,6 +72,6 @@ class TravelFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def travel_form_params
-      params.require(:travel_form).permit(:First_Name, :Last_Name, :Department, :Start_Date, :End_Date, :Location, :Flight_Price, :Hotel_Price, :Mileage, :Transportation, :Other)
+      params.require(:travel_form).permit(:First_Name, :Last_Name, :Department, :Start_Date, :End_Date, :Location, :Flight_Price, :Hotel_Price, :Mileage, :Transportation, :Other )
     end
 end

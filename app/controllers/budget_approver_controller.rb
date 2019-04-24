@@ -6,12 +6,17 @@ class BudgetApproverController < ApplicationController
   def index
     @budget_approvers = BudgetApprover.all
   end
-
-  # GET /budget_approvers/1
+  
+    # GET /budget_approvers/1
   # GET /budget_approvers/1.json
   def show
-      @travel_forms = TravelForm.all
+    @travel_forms = TravelForm.all
+    @expense_reports = ExpenseReport.all
+    @request_forms = RequestForm.all
+    @budget_approver = BudgetApprover.all
   end
+  
+  
 
   # GET /budget_approvers/new
   def new
@@ -21,21 +26,11 @@ class BudgetApproverController < ApplicationController
   # GET /budget_approvers/1/edit
   def edit
   end
-  def approve
-    @travel_forms = TravelForm.all
-		@travel_forms = @travel_forms.id
-		@travel_forms.update_attribute(:status, "Approved")
-	  end
-
-  # def denied
-
-  # end
 
   # POST /budget_approvers
   # POST /budget_approvers.json
   def create
     @budget_approver = BudgetApprover.new(budget_approver_params)
-
     respond_to do |format|
       if @budget_approver.save
         format.html { redirect_to @budget_approver, notice: 'Budget approver page was successfully created.' }

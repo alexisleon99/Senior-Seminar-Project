@@ -1,5 +1,4 @@
 class EmployeeController < ApplicationController
-
   before_action :set_employee, only: [:show, :edit, :update, :destroy]
 
   # GET /employee

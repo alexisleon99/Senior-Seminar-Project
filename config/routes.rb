@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :expense_items
   namespace :admin do
       resources :accounts
       resources :budget_approvers
@@ -12,16 +13,18 @@ Rails.application.routes.draw do
       root to: "accounts#index"
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
-
-  resources :payment_manager do
-    get :approve
-    put :denied
-    root to: "payment_manager#index"
-  end
-  resources :budget_approver do
-    get :approve
-    put :denied
-  end
+  
+  #resources :payment_manager do
+   # get :approve
+    #put :denied
+    #root to: "payment_manager#index"
+  #end
+  #resources :budget_approver do
+   # get :approve
+    #get :denied
+    #root to: "budget_approver#approve"
+    #root to: "budget_approver#denied"
+  #end
 
   resources :payment_manager
   resources :budget_approver
@@ -30,8 +33,10 @@ Rails.application.routes.draw do
   resources :employee
   resources :travel_forms
   resources :departments
- root 'employee#index' 
-#get 'approve' to: 'travel_forms#approve'
+  #get "/budget_approver/denied" => "budget_approver#denied"
+ #get '/budget_approvers/approve', to: 'budget_approver_controller#approve', as: :approve
+ #get '/budget_approver/:budget_approver/denied/id', to: 'budget_approver_controller#denied#id', as: :denied
+ root 'employee#index'
  #root '/accounts/sign_in'
  #root 'devise/sessions#new'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
