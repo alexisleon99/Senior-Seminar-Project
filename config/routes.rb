@@ -38,8 +38,8 @@ Rails.application.routes.draw do
   #get "/budget_approver/denied" => "budget_approver#denied"
  #get '/budget_approvers/approve', to: 'budget_approver_controller#approve', as: :approve
  #get '/budget_approver/:budget_approver/denied/id', to: 'budget_approver_controller#denied#id', as: :denied
- root 'employee#index'
- #root '/accounts/sign_in'
+ #root 'employee#index'
+ root 'accounts#sign_in'
  #root 'devise/sessions#new'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
 
