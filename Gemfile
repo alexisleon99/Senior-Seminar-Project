@@ -10,12 +10,12 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
-  gem 'pg', '0.18.4'
   gem 'rails_12factor', '0.0.2'
 end
 # Use Puma as the app server
 
 # Use SCSS for stylesheets
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 # See https://github.com/rails/execjs#readme for more supported runtimes

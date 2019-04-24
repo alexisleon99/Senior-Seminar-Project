@@ -2,14 +2,13 @@
     <aside id="notice"><%= notice %></aside>
 <% end %>
 
-
-<p id="notice"><%= notice %></p>
-
+<div class="center jumbotron">
 
 <h1 aligin="center">List of employees</h1>
 
 
 <h1>Employees</h1>
+<li>rails runner lib/create_employees_budget_approvers_and_payment_manager.rb</li>
 <li>rails runner lib/create_super_account.rb</li>
 <li>to create admin account </li>
 <li>super@comapany.com password changeme</li>
@@ -42,4 +41,5 @@
 
 <br>
 
-<%= link_to 'New Employee', new_employee_path, class: "btn btn-xs btn-success" %>
+<%= link_to 'New Employee', new_employee_path, class: "btn btn-primary btn-lg btn-xlarge" %>
+</div>
