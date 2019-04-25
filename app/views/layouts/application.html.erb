@@ -10,17 +10,17 @@
       <% if account_signed_in? %>
       <% if current_account.accountable_type == "Employee"%>
       <li class="nav-item active">
-        <a class="nav-link" href=/>Employee Home <span class="sr-only">(current)</span></a>
+        <%= link_to 'Employee Home', employee_path(current_account.accountable_id), class:"nav-link" %>
       </li>
       <% end %>
       <% if current_account.accountable_type == "BudgetApprover"%>
         <li class="nav-item active">
-          <a class="nav-link" href=budget_approver>Budget Approver <span class="sr-only">(current)</span></a>
+          <%= link_to 'Budget Approver Home', budget_approver_path(current_account.accountable_id), class:"nav-link" %>
         </li>
         <% end %>
         <% if current_account.accountable_type == "PaymentManager"%>
       <li class="nav-item active">
-        <a class="nav-link" href=payment_manager>Payment Manager <span class="sr-only">(current)</span></a>
+        <%= link_to 'Payment Manager Home', payment_manager_path(current_account.accountable_id), class:"nav-link" %>
       </li>
       <% end %>
     <li class="nav-item">

@@ -38,9 +38,10 @@ Rails.application.routes.draw do
   #get "/budget_approver/denied" => "budget_approver#denied"
  #get '/budget_approvers/approve', to: 'budget_approver_controller#approve', as: :approve
  #get '/budget_approver/:budget_approver/denied/id', to: 'budget_approver_controller#denied#id', as: :denied
- #root 'employee#index'
- root 'accounts#sign_in'
- #root 'devise/sessions#new'
+ root 'employee#welcome'
+ #root to: "accounts#index"
+ #root 'accounts#sign_in'
+ #root 'devise#sessions/create'
  #devise_scope :accounts do get 'employee_pages#index' => 'devise/sessions#new' end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
