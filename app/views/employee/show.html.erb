@@ -9,8 +9,6 @@
   <tbody>
     <% @travel_forms.each do |travel_form| %>
       <%if travel_form.account_id == current_account.id%>
-      <% @request_forms.each do |request_form| %>
-        <% if request_form.travel_form_id == travel_form.id%>
     <div>
       <tr>
       <td> Travel form </td>
@@ -19,7 +17,9 @@
         <td><%= link_to 'Review Travel Form', travel_form %></td>
         <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
       <tr>
-        <td> Expense Form </td>
+      <% @request_forms.each do |request_form| %>
+      <% if request_form.travel_form_id == travel_form.id%>
+        <td> Request Form </td>
         <td><%= request_form.travel_form_id %></td>
       </tr>
     <% end %>
