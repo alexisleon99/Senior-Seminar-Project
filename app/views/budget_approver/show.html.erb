@@ -8,8 +8,6 @@
 
   <tbody>
     <% @travel_forms.each do |travel_form| %>
-      <% @request_forms.each do |request_form| %>
-        <% if request_form.travel_form_id == travel_form.id%>
     <div>
       <tr>
       <td> Travel form </td>
@@ -20,10 +18,12 @@
         <td><%= button_to "Approve", budget_approver_path, method: :get %></td>
         <td><%= button_to "Deny",budget_approver_path, method: :get %></td>
       <tr>
-        <td> Expense Form </td>
+      <% @request_forms.each do |request_form| %>
+      <% if request_form.travel_form_id == travel_form.id%>
+        <td> Request Form </td>
         <td><%= request_form.travel_form_id %></td>
         <td></td>
-         <td><%= link_to 'Review Expense Form', request_form %></td>
+         <td><%= link_to 'Review Request Form', request_form %></td>
       </tr>
     <% end %>
     <%end%>
@@ -46,5 +46,6 @@
     <% end %>
   </tbody>
 </table>
+
 
 
