@@ -43,6 +43,7 @@
 <p>
   <strong>Image url:</strong>
   <%= @expense_report.image_url %>
+  <%= image_tag(@expense_report.image_url_url, width: 600) if @expense_report.image_url.present? %>
 </p>
 
 <%= link_to 'Back', employee_path %>
