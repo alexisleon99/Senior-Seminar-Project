@@ -11,6 +11,7 @@
     </div>
   <% end %>
 
+
   <div class="field">
     <%= form.label :First_name %>
     <%= form.text_field :First_name %>
@@ -37,11 +38,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :Mileage %>
-    <%= form.text_field :Mileage %>
-  </div>
-
-  <div class="field">
     <%= form.label :Transportation %>
     <%= form.text_field :Transportation %>
   </div>
@@ -53,8 +49,7 @@
 
   <div class="field">
     <%= form.label :image_url %>
-    
-<%= form.file_field :image_url, id: :Request_form_image_url %>
+    <%= form.file_field :image_url, id: :Request_form_image_url %>
   </div>
 
   <div class="actions">
