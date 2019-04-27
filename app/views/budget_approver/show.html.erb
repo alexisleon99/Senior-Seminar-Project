@@ -10,6 +10,7 @@
 
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
+        <td> Request Forms </td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
         <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
@@ -19,8 +20,9 @@
         <% @travel_forms.each do |travel_form| %>
           <tr>
           <% if request_form.travel_form_id == travel_form.id%>
-          <td> travel forms </td>
+          <td> Travel Forms </td>
           <td><%= travel_form.id %></td>
+          <td><%= link_to 'Show', travel_form %></td>
           </tr>
           <%end%>
 
