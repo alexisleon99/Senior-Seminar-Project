@@ -20,6 +20,7 @@
       <% if request_form.travel_form_id == travel_form.id%>
         <td> Request Form </td>
         <td><%= request_form.travel_form_id %></td>
+        <td><%= request_form.status %></td>
         <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
         <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
         <td></td>
