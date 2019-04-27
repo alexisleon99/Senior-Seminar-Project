@@ -5,21 +5,20 @@ class RequestFormsController < ApplicationController
   # GET /request_forms.json
   def index
     @request_forms = RequestForm.all
-    @departments = RequestForm.all
   end
   
   def approve
     request = set_request_form
     request.update_attributes(:status => "Approved")
     respond_to do |format|
-      format.html { redirect_to budget_approver_path, notice: 'Request Form was Approved!' }
+      format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
     end
   end
   def denied
     request = set_request_form
     request.update_attributes(:status => "Denied")
     respond_to do |format|
-      format.html { redirect_to budget_approver_path, notice: 'Request Form was Denied!' }
+      format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Denied!' }
     end
   end
 
@@ -27,6 +26,7 @@ class RequestFormsController < ApplicationController
   # GET /request_forms/1.json
   def show
     @travel_forms = RequestForm.all
+    @departments = Department.all
   end
 
   # GET /request_forms/new
