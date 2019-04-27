@@ -9,11 +9,17 @@ class RequestFormsController < ApplicationController
   end
   
   def approve
- 
     request = set_request_form
     request.update_attributes(:status => "Approved")
     respond_to do |format|
-      format.html { redirect_to new_request_form_path, notice: 'It did something!!!' }
+      format.html { redirect_to budget_approver_path, notice: 'Request Form was Approved!' }
+    end
+  end
+  def denied
+    request = set_request_form
+    request.update_attributes(:status => "Denied")
+    respond_to do |format|
+      format.html { redirect_to budget_approver_path, notice: 'Request Form was Denied!' }
     end
   end
 

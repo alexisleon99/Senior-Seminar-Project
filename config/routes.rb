@@ -31,6 +31,7 @@ Rails.application.routes.draw do
   resources :request_forms do
     member do
       patch 'approve'
+      patch 'denied'
     end
   end
   resources :expense_reports
