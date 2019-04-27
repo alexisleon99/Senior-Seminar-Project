@@ -22,7 +22,7 @@
       <tr>
         <td> Expense Form </td>
         <td><%= request_form.travel_form_id %></td>
-        <td><%= button_to "Approve", approve_request_form_path, method: :patch %></td>
+        <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
         <td></td>
          <td><%= link_to 'Review Expense Form', request_form %></td>
       </tr>

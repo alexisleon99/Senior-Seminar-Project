@@ -9,9 +9,9 @@ class RequestFormsController < ApplicationController
   end
   
   def approve
-    #request = request.find(request_form_params)
-    request = request_form_params
-    request.update_attributes(:id => 1)
+ 
+    request = set_request_form
+    request.update_attributes(:status => "Approved")
     respond_to do |format|
       format.html { redirect_to new_request_form_path, notice: 'It did something!!!' }
     end
