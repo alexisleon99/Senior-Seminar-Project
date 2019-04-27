@@ -8,16 +8,19 @@
 
   <tbody>
       <% @request_forms.each do |request_form| %>
+        <% if request_form.travel_form_id == travel_form.id%>
       <% if request_form.departments_id == current_account.department_id%>
-        <tr>
-            <td> Request Form </td>
-            <td><%= request_form.travel_form_id %></td>
-            <td><%= request_form.id %></td>
-            <td><%= link_to 'Review Request Form', request_form %></td>
-            <td><%= button_to "Approve", budget_approver_path, method: :get %></td>
-            <td><%= button_to "Deny",budget_approver_path, method: :get %></td>
-    <%end%>
+        <td> Request Form </td>
+        <td><%= request_form.travel_form_id %></td>
+        <td><%= request_form.status %></td>
+        <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
+        <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
+        <td></td>
+         <td><%= link_to 'Review Request Form', request_form %></td>
+      </tr>
     <% end %>
+    <% end %>
+    <%end%>
       </tr>
     </div>
   </tbody>
@@ -31,6 +34,7 @@
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <td><%= link_to 'Edit', edit_request_form_path(expense_report.id) %></td>
       </tr>
     <% end %>
   </tbody>
