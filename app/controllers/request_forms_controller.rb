@@ -7,6 +7,21 @@ class RequestFormsController < ApplicationController
     @request_forms = RequestForm.all
     @departments = RequestForm.all
   end
+  
+  def approve
+    request = set_request_form
+    request.update_attributes(:status => "Approved")
+    respond_to do |format|
+      format.html { redirect_to budget_approver_path, notice: 'Request Form was Approved!' }
+    end
+  end
+  def denied
+    request = set_request_form
+    request.update_attributes(:status => "Denied")
+    respond_to do |format|
+      format.html { redirect_to budget_approver_path, notice: 'Request Form was Denied!' }
+    end
+  end
 
   # GET /request_forms/1
   # GET /request_forms/1.json
@@ -71,6 +86,6 @@ class RequestFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_form_params
-      params.require(:request_form).permit(:amount,:departments_id, :travel_form_id)
+      params.require(:request_form).permit(:amount,:departments_id, :travel_form_ids, :status)
     end
 end

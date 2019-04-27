@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_22_200052) do
+ActiveRecord::Schema.define(version: 2019_04_27_190238) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -90,6 +90,7 @@ ActiveRecord::Schema.define(version: 2019_04_22_200052) do
     t.integer "departments_id"
     t.integer "travel_forms_id"
     t.integer "travel_form_id"
+    t.string "status", default: "pending"
     t.index ["departments_id"], name: "index_request_forms_on_departments_id"
     t.index ["travel_forms_id"], name: "index_request_forms_on_travel_forms_id"
   end
