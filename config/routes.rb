@@ -27,8 +27,12 @@ Rails.application.routes.draw do
   #end
 
   resources :payment_manager
-  resources :budget_approver
-  resources :request_forms
+  resources :budget_approver 
+  resources :request_forms do
+    member do
+      patch 'approve'
+    end
+  end
   resources :expense_reports
   resources :employee
   resources :travel_forms

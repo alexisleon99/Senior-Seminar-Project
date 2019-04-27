@@ -7,6 +7,15 @@ class RequestFormsController < ApplicationController
     @request_forms = RequestForm.all
     @departments = RequestForm.all
   end
+  
+  def approve
+    #request = request.find(request_form_params)
+    request = request_form_params
+    request.update_attributes(:id => 1)
+    respond_to do |format|
+      format.html { redirect_to new_request_form_path, notice: 'It did something!!!' }
+    end
+  end
 
   # GET /request_forms/1
   # GET /request_forms/1.json
@@ -71,6 +80,6 @@ class RequestFormsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def request_form_params
-      params.require(:request_form).permit(:amount,:departments_id, :travel_form_id)
+      params.require(:request_form).permit(:amount,:departments_id, :travel_form_ids, :status)
     end
 end

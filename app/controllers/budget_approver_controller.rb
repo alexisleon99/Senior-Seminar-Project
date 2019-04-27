@@ -15,8 +15,6 @@ class BudgetApproverController < ApplicationController
     @request_forms = RequestForm.all
     @budget_approver = BudgetApprover.all
   end
-  
-  
 
   # GET /budget_approvers/new
   def new
