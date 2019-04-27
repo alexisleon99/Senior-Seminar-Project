@@ -10,6 +10,13 @@ class RequestFormsController < ApplicationController
   def approve
     request = set_request_form
     request.update_attributes(:status => "Approved")
+    @departments = Department.find(@request_form.departments_id)
+    departmentID = request.departments_id
+    departmentAway = request.amount
+    @departments.budget = @departments.budget - departmentAway
+    @departments.update_attributes(:budget => @departments.budget)
+  
+
     respond_to do |format|
       format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
     end
