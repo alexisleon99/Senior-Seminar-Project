@@ -11,7 +11,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.json
   def show
-    @travel_forms = RequestForm.all
+    @request_forms = RequestForm.all
   end
 
   # GET /departments/new
