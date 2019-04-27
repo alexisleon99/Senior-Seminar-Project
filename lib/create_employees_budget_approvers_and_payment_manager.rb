@@ -31,9 +31,9 @@ Account.transaction do
   Account.create( :email => 'Eric@employee.com', :password => 'changeme', :password_confirmation => 'changeme', 
                   :accountable => Employee.find_by_name("Eric"))
   Account.create( :email => 'bob@budget.com', :password => 'changeme', :password_confirmation => 'changeme', 
-                  :accountable => BudgetApprover.find_by_name("Bob"), :department_id => 2)
+                  :accountable => BudgetApprover.find_by_name("Bob"), :department_id => 1)
   Account.create( :email => 'bran@budget.com', :password => 'changeme', :password_confirmation => 'changeme', 
-                  :accountable =>BudgetApprover.find_by_name("Bran"))
+                  :accountable =>BudgetApprover.find_by_name("Bran"), :department_id => 2)
   Account.create( :email => 'pam@payment.com', :password => 'changeme', :password_confirmation => 'changeme', 
                   :accountable => PaymentManager.find_by_name("Pam"))
 end
