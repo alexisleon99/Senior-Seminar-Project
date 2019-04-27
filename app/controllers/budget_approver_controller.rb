@@ -14,6 +14,7 @@ class BudgetApproverController < ApplicationController
     @expense_reports = ExpenseReport.all
     @request_forms = RequestForm.all
     @budget_approver = BudgetApprover.all
+    @departments = Department.all
   end
 
   # GET /budget_approvers/new

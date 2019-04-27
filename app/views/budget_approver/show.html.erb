@@ -3,6 +3,14 @@
   <h1 class="mt-5"> Budget Approver Page</h1>
 </div>
 
+<div>
+  <h1 class="mt-5"> Budget: </h1>
+  <% @departments.each do |department| %>
+    <% if current_account.department_id == department.id %>
+    <td><%= department.budget %></td>
+    <% end %>
+   <% end %>
+</div>
 <h2 class="mt-5"> Travel Form</h2>
   <table>
 
@@ -25,7 +33,6 @@
           <td><%= link_to 'Show', travel_form %></td>
           </tr>
           <%end%>
-
 
       </tr>
     <% end %>
