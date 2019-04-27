@@ -7,6 +7,7 @@
   <table>
 
   <tbody>
+<<<<<<< HEAD
       <% @request_forms.each do |request_form| %>
       <% if request_form.departments_id == current_account.department_id%>
         <tr>
@@ -16,6 +17,28 @@
             <td><%= link_to 'Review Request Form', request_form %></td>
             <td><%= button_to "Approve", budget_approver_path, method: :get %></td>
             <td><%= button_to "Deny",budget_approver_path, method: :get %></td>
+=======
+    <% @travel_forms.each do |travel_form| %>
+    <div>
+      <tr>
+      <td> Travel form </td>
+        <td><%= travel_form.id %></td>
+        <td><%= travel_form.status %></td>
+        <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
+      <tr>
+      <% @request_forms.each do |request_form| %>
+      <% if request_form.travel_form_id == travel_form.id%>
+        <td> Request Form </td>
+        <td><%= request_form.travel_form_id %></td>
+        <td><%= request_form.status %></td>
+        <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
+        <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
+        <td></td>
+         <td><%= link_to 'Review Request Form', request_form %></td>
+      </tr>
+    <% end %>
+>>>>>>> b77c6df99e65de85a4d99fe4a7192e95011ad560
     <%end%>
     <% end %>
       </tr>

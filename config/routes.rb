@@ -14,11 +14,14 @@ Rails.application.routes.draw do
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
 
-
   resources :payment_manager
-  resources :budget_approver
-
-  resources :request_forms
+  resources :budget_approver 
+  resources :request_forms do
+    member do
+      patch 'approve'
+      patch 'denied'
+    end
+  end
   resources :expense_reports
   resources :employee
   resources :travel_forms

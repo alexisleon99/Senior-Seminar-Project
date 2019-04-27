@@ -1,2 +1,23 @@
 
-  
+<%= form_with(model: @request_form, local: true) do |form| %>
+<div class="field">
+<%= form.label "Department" %>
+<%= form.collection_select(:departments_id, Department.all, :id, :names, { :prompt => 'Select a Department', :selected => @request_form}, { class: 'form-control' }) %>
+</div>
+
+<div class="field">
+  <%= form.label :amount %>
+  <%= form.text_field :amount %>
+</div>
+
+<div class="field">
+  <%= form.label :travel_form_id%>
+  <%= form.number_field :travel_form_id %>
+  </div>
+
+  <div class="actions">
+  <%= form.submit %>
+  </div>
+
+
+<% end %>
