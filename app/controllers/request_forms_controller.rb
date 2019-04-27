@@ -30,7 +30,7 @@ class RequestFormsController < ApplicationController
   
     respond_to do |format|
       if @request_form.save
-        format.html { redirect_to travel_forms_path, notice: 'Request form was successfully created.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Request form was successfully created.' }
         format.json { render :show, status: :created, location: @request_form }
       else
         format.html { render :new }

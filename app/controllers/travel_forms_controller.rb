@@ -44,7 +44,7 @@ class TravelFormsController < ApplicationController
   def update
     respond_to do |format|
       if @travel_form.update(travel_form_params)
-        format.html { redirect_to @travel_form, notice: 'Travel form was successfully updated.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Travel form was successfully updated.' }
         format.json { render :show, status: :ok, location: @travel_form }
       else
         format.html { render :edit }
