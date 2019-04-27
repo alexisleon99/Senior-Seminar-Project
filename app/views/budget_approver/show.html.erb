@@ -7,30 +7,31 @@
   <table>
 
   <tbody>
-    <% @travel_forms.each do |travel_form| %>
-    <div>
-      <tr>
-      <td> Travel form </td>
-        <td><%= travel_form.id %></td>
-        <td><%= travel_form.status %></td>
-        <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
-      <tr>
+
       <% @request_forms.each do |request_form| %>
-      <% if request_form.travel_form_id == travel_form.id%>
-        <td> Request Form </td>
+        <% if request_form.departments_id == current_account.department_id%>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
         <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
         <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
         <td></td>
          <td><%= link_to 'Review Request Form', request_form %></td>
+        <% @travel_forms.each do |travel_form| %>
+          <tr>
+          <% if request_form.travel_form_id == travel_form.id%>
+          <td> travel forms </td>
+          <td><%= travel_form.id %></td>
+          </tr>
+          <%end%>
+
+
       </tr>
     <% end %>
-    <%end%>
+    <% end %>
+    <% end %>
       </tr>
     </div>
-    <%end%>
+
   </tbody>
 </table>
 <h2 class="mt-5"> Expense Reports </h2>
