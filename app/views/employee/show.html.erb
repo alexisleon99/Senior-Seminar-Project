@@ -3,11 +3,10 @@
   <h1 class="mt-5"> Employee Travel and Expense Forms</h1>
 </div>
 
-<h2 class="mt-5"> Travel Form</h2>
+<td><h2 class="mt-5"> Travel Form</h2></td>
   <table>
-    
-    <td>Travel form</td>
-    <td>ID</td>
+    <td></td>
+    <td>Id</td>
     <td>status</td>
 
   <tbody>
@@ -18,7 +17,6 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
-        <td><%= travel_form.count %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
         <%if travel_form.status == "Denied"%>
           <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id) %></td>
