@@ -15,10 +15,29 @@ class RequestFormsController < ApplicationController
     departmentAway = request.amount
     @departments.budget = @departments.budget - departmentAway
     @departments.update_attributes(:budget => @departments.budget)
-  
+    
+   
+    @travel_forms = TravelForm.all
+    @request_forms = RequestForm.all
+    @request_form = set_request_form
+     @travel_forms.each do |travel_form| 
+       @request_forms.each do |request_form| 
+         counter = 0
+         @travel_form = @travel_forms.find(@request_form.travel_form_id)
+          if @travel_forms_id == @request_forms_travel_form_id
+            counter = counter + 1
+            if @travel_form.count == counter
+              @travel_form.update_attributes(:status => "Approved")
+        
+            end
+          end 
+        end
+      end
 
     respond_to do |format|
       format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
+      
+      
     end
   end
   def denied
@@ -55,7 +74,7 @@ class RequestFormsController < ApplicationController
     @travel_form.update_attributes(:count => @travel_form.count)
     respond_to do |format|
       if @request_form.save
-        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Request form was successfully created.' }
+        format.html { redirect_to new_request_form_path, notice: 'Request form was successfully created.' }
         format.json { render :show, status: :created, location: @request_form }
       else
         format.html { render :new }
@@ -100,3 +119,4 @@ class RequestFormsController < ApplicationController
       params.require(:request_form).permit(:amount,:departments_id, :travel_form_id, :status)
     end
 end
+
