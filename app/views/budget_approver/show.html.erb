@@ -18,6 +18,7 @@
 
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
+        <% if request_form.status != "Approved"%>
         <td> Request Forms </td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
@@ -25,16 +26,19 @@
           <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
           <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
         <% end %>
-        <td></td>
          <td><%= link_to 'Review Request Form', request_form %></td>
+        <% end %>
         <% @travel_forms.each do |travel_form| %>
           <tr>
           <% if request_form.travel_form_id == travel_form.id%>
+          <% if travel_form.status != "Approved"%>
           <td> Travel Forms </td>
           <td><%= travel_form.id %></td>
+          <td><%= travel_form.status %></td>
           <td><%= link_to 'Show', travel_form %></td>
           </tr>
           <%end%>
+        <% end %>
 
       </tr>
     <% end %>
