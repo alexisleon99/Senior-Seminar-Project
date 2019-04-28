@@ -49,7 +49,10 @@ class RequestFormsController < ApplicationController
   # POST /request_forms.json
   def create
     @request_form = RequestForm.new(request_form_params)
-  
+    @travel_form = TravelForm.all
+    @travel_form = @travel_form.find(@request_form.travel_form_id)
+    @travel_form.count = (@travel_form.count)+1
+    @travel_form.update_attributes(:count => @travel_form.count)
     respond_to do |format|
       if @request_form.save
         format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Request form was successfully created.' }
