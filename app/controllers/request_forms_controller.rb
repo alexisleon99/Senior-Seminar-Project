@@ -22,17 +22,16 @@ class RequestFormsController < ApplicationController
     @request_form = set_request_form
      @travel_forms.each do |travel_form| 
        @request_forms.each do |request_form| 
-         counter = 0
          @travel_form = @travel_forms.find(@request_form.travel_form_id)
-          if @travel_forms_id == @request_forms_travel_form_id
-            counter = counter + 1
-            if @travel_form.count == counter
-              @travel_form.update_attributes(:status => "Approved")
-        
-            end
+          if @travel_forms_id == @request_forms_travel_form_id            
+            @travel_form.counter = (@travel_form.counter)+1
           end 
         end
       end
+            @travel_form.update_attributes(:counter => @travel_form.counter)
+          if @travel_form.count == @travel_form.counter
+              @travel_form.update_attributes(:status => "Approved")
+            end
 
     respond_to do |format|
       format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
