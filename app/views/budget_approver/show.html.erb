@@ -21,8 +21,10 @@
         <td> Request Forms </td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
-        <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
-        <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
+        <% if request_form.status == "pending"%>
+          <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch %></td>
+          <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch%></td>
+        <% end %>
         <td></td>
          <td><%= link_to 'Review Request Form', request_form %></td>
         <% @travel_forms.each do |travel_form| %>
