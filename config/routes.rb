@@ -14,7 +14,7 @@ Rails.application.routes.draw do
     end
   devise_for :accounts,  :controllers => { :registrations => 'registrations' }
 
-  resources :payment_manager
+  resources :payment_manager 
   resources :budget_approver 
   resources :request_forms do
     member do
@@ -22,7 +22,12 @@ Rails.application.routes.draw do
       patch 'denied'
     end
   end
-  resources :expense_reports
+  resources :expense_reports do
+    member do
+      patch 'approve'
+      patch 'denied'
+    end
+  end 
   resources :employee
   resources :travel_forms
   resources :departments

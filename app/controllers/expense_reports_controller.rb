@@ -6,7 +6,22 @@ class ExpenseReportsController < ApplicationController
   def index
     @expense_reports = ExpenseReport.all
   end
+  def approve
+    report = set_expense_report
+    report.update_attributes(:status => "Approved")
 
+    respond_to do |format|
+      format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
+    end
+  end
+  def denied
+    report = set_expense_report
+    report.update_attributes(:status => "denied")
+
+    respond_to do |format|
+      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was denied!' }
+    end
+  end
   # GET /expense_reports/1
   # GET /expense_reports/1.json
   def show
