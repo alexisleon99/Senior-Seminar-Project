@@ -29,7 +29,7 @@ class ExpenseReportsController < ApplicationController
     @expense_report.account_id = @account.id
     respond_to do |format|
       if @expense_report.save
-        format.html { redirect_to @expense_report, notice: 'Expense report was successfully created.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Expense report was successfully created.' }
         format.json { render :show, status: :created, location: @expense_report }
       else
         format.html { render :new }
@@ -42,8 +42,9 @@ class ExpenseReportsController < ApplicationController
   # PATCH/PUT /expense_reports/1.json
   def update
     respond_to do |format|
+      @expense_report.update_attribute(:status, "pending")
       if @expense_report.update(expense_report_params)
-        format.html { redirect_to @expense_report, notice: 'Expense report was successfully updated.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Expense report was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense_report }
       else
         format.html { render :edit }
