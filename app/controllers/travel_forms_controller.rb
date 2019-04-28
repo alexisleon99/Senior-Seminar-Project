@@ -28,6 +28,7 @@ class TravelFormsController < ApplicationController
     @account = current_account
     @travel_form = TravelForm.new(travel_form_params)
     @travel_form.account_id = @account.id
+    @travel_form.estimate = (@travel_form.Flight_Price + @travel_form.Hotel_Price + @travel_form.Transportation + @travel_form.Other)
     respond_to do |format|
       if @travel_form.save
         format.html { redirect_to new_request_form_path, notice: 'Travel form was successfully created.' }
