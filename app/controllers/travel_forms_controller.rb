@@ -44,6 +44,7 @@ class TravelFormsController < ApplicationController
   def update
     respond_to do |format|
       if @travel_form.update(travel_form_params)
+        @travel_form.update_attribute(:status, "pending")
         format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Travel form was successfully updated.' }
         format.json { render :show, status: :ok, location: @travel_form }
       else

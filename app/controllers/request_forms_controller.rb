@@ -66,6 +66,7 @@ class RequestFormsController < ApplicationController
   def update
     respond_to do |format|
       if @request_form.update(request_form_params)
+        @request_form.update_attribute(:status, "pending")
         format.html { redirect_to @request_form, notice: 'Request form was successfully updated.' }
         format.json { render :show, status: :ok, location: @request_form }
       else

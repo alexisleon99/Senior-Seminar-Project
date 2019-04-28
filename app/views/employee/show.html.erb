@@ -15,13 +15,21 @@
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
-        <td><%= link_to 'Edit', edit_travel_form_path(travel_form.id) %></td>
+        <%if travel_form.status == "Denied"%>
+          <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id) %></td>
+        <% end %>
+        <%if travel_form.status == "Approved"%>
+          <td><%= link_to 'New Expense Report', new_expense_report_path %></td>
+        <% end %>
       <tr>
       <% @request_forms.each do |request_form| %>
       <% if request_form.travel_form_id == travel_form.id%>
         <td> Request Form </td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
+        <%if request_form.status == "Denied"%>
+          <td><%= link_to 'Resubmit', edit_request_form_path(request_form.id) %></td>
+        <% end %>
       </tr>
     <% end %>
     <%end%>
@@ -37,6 +45,7 @@
 <table>
   <td><%= link_to 'New Request', new_request_form_path %></td>
 </table>
+
 <h2 class="mt-5"> Expense Reports </h2>
 <table>
     <tbody>
@@ -51,14 +60,6 @@
     <% end %>
   </tbody>
 </table>
-
-
-
-
-
-<div>
-<%= link_to 'New Expense Report', new_expense_report_path %>
-</div>
 
 
 
