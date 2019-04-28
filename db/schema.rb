@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_27_190238) do
+ActiveRecord::Schema.define(version: 2019_04_28_172821) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -117,6 +117,8 @@ ActiveRecord::Schema.define(version: 2019_04_27_190238) do
     t.datetime "updated_at", null: false
     t.integer "account_id"
     t.string "status", default: "pending"
+    t.integer "estimate", default: 0
+    t.integer "count", default: 0
   end
 
 end
