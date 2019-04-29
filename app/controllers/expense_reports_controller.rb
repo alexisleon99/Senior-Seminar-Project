@@ -16,10 +16,10 @@ class ExpenseReportsController < ApplicationController
   end
   def denied
     report = set_expense_report
-    report.update_attributes(:status => "denied")
+    report.update_attributes(:status => "Denied")
 
     respond_to do |format|
-      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was denied!' }
+      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was Denied!' }
     end
   end
   # GET /expense_reports/1

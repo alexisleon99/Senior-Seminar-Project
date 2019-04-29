@@ -26,8 +26,10 @@
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <% if expense_report.status == "pending"%>
         <td><%= button_to "Approve", approve_expense_report_path(expense_report.id), method: :patch %></td>
         <td><%= button_to "Denied", denied_expense_report_path(expense_report.id), method: :patch %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
