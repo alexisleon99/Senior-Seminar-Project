@@ -57,6 +57,7 @@ class RequestFormsController < ApplicationController
   # GET /request_forms/new
   def new
     @request_form = RequestForm.new
+    @travel_forms = TravelForm.all
   end
 
   # GET /request_forms/1/edit
@@ -88,7 +89,7 @@ class RequestFormsController < ApplicationController
     respond_to do |format|
       if @request_form.update(request_form_params)
         @request_form.update_attribute(:status, "pending")
-        format.html { redirect_to @request_form, notice: 'Request form was successfully updated.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Request form was successfully updated.' }
         format.json { render :show, status: :ok, location: @request_form }
       else
         format.html { render :edit }

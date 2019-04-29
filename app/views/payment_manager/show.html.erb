@@ -10,28 +10,15 @@
     <% end %>
 </div>
 
-<div class="col-lg-12 text-center">
-  <h1 class="mt-5"> Payment Manager</h1>
-</div>
 
-<h2 class="mt-5"> Travel Form</h2>
-  <table>
-
-  <tbody>
-    <% @travel_forms.each do |travel_form| %>
-    <div>
+<table class ="table">
+    <thead class="thead-dark">
       <tr>
-      <td> Travel form </td>
-        <td><%= travel_form.id %></td>
-        <td><%= travel_form.status %></td>
-        <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <th scope = "col">Submitted Reports</th>
+        <th scope = "col">Id</th>
+        <th scope = "col">status</th>
       </tr>
-    </div>
-    <%end%>
-  </tbody>
-</table>
-<h2 class="mt-5"> Expense Reports </h2>
-<table>
+   </thead>
     <tbody>
     <% @expense_reports.each do |expense_report| %>
       <tr>
@@ -46,6 +33,30 @@
   </tbody>
 </table>
 <div>
+  
+   <table class= "table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope = "col">Travel Forms</th>
+        <th scope = "col">Id</th>
+        <th scope = "col">status</th>
+        <th scope = "col"></th>
+        <th scope = "col"></th>
 
-<%= link_to 'Edit', edit_payment_manager_path(@payment_manager) %> |
-<%= link_to 'Back', payment_manager_path %>
+      </tr>
+   </thead>
+  <tbody>
+    <% @travel_forms.each do |travel_form| %>
+    <div>
+      <tr>
+      <td> Travel form </td>
+        <td><%= travel_form.id %></td>
+        <td><%= travel_form.status %></td>
+        <td><%= link_to 'Review Travel Form', travel_form %></td>
+      </tr>
+    </div>
+    <%end%>
+  </tbody>
+</table>
+
+
