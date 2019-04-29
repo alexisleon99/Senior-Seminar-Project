@@ -6,7 +6,22 @@ class ExpenseReportsController < ApplicationController
   def index
     @expense_reports = ExpenseReport.all
   end
+  def approve
+    report = set_expense_report
+    report.update_attributes(:status => "Approved")
 
+    respond_to do |format|
+      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
+    end
+  end
+  def denied
+    report = set_expense_report
+    report.update_attributes(:status => "denied")
+
+    respond_to do |format|
+      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was denied!' }
+    end
+  end
   # GET /expense_reports/1
   # GET /expense_reports/1.json
   def show
@@ -29,7 +44,7 @@ class ExpenseReportsController < ApplicationController
     @expense_report.account_id = @account.id
     respond_to do |format|
       if @expense_report.save
-        format.html { redirect_to @expense_report, notice: 'Expense report was successfully created.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Expense report was successfully created.' }
         format.json { render :show, status: :created, location: @expense_report }
       else
         format.html { render :new }
@@ -42,8 +57,9 @@ class ExpenseReportsController < ApplicationController
   # PATCH/PUT /expense_reports/1.json
   def update
     respond_to do |format|
+      @expense_report.update_attribute(:status, "pending")
       if @expense_report.update(expense_report_params)
-        format.html { redirect_to @expense_report, notice: 'Expense report was successfully updated.' }
+        format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Expense report was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense_report }
       else
         format.html { render :edit }
@@ -70,6 +86,6 @@ class ExpenseReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_report_params
-      params.require(:expense_report).permit(:First_name, :Last_Name, :Department, :Flight, :Hotel, :Mileage, :Transportation, :Other, :image_url)
+      params.require(:expense_report).permit(:First_name, :Last_Name, :Department, :Flight, :Hotel, :Mileage, :Transportation, :Other, :image_url,:travel_forms_id)
     end
 end

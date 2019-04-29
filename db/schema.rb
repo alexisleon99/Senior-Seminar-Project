@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_28_190357) do
+ActiveRecord::Schema.define(version: 2019_04_29_192255) do
 
   create_table "accounts", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(version: 2019_04_28_190357) do
     t.datetime "updated_at", null: false
     t.string "status", default: "pending"
     t.string "account_id"
+    t.integer "travel_forms_id"
   end
 
   create_table "expenses", force: :cascade do |t|

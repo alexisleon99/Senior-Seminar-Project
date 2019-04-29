@@ -9,8 +9,6 @@ class RegistrationsController < Devise::RegistrationsController
 
         if (resource.type=="Employee")
             resource.accountable = Employee.new
-        
-
         elsif(resource.type=="Budget Approver")
             resource.accountable = BudgetApprover.new
         else
