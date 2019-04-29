@@ -7,6 +7,8 @@ class PaymentManagerController < ApplicationController
     @payment_manager = PaymentManager.all
   end
 
+
+
   # GET /payment_manager/1
   # GET /payment_manager/1.json
   def show
