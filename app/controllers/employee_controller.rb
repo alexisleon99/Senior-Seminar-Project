@@ -52,6 +52,14 @@ class EmployeeController < ApplicationController
         format.json { render json: @employee.errors, status: :unprocessable_entity }
       end
     end
+
+    # if @employee.update_attributes(employee_params)
+    #   flash[:success] = "Employee updated"
+    #   redirect_to @employee
+    # else
+    #   render 'edit'
+    # end
+
   end
 
   # DELETE /employee/1
@@ -65,6 +73,7 @@ class EmployeeController < ApplicationController
   end
 
   private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_employee
       @employee = Employee.find(params[:id])
@@ -73,5 +82,6 @@ class EmployeeController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def employee_params
       params.fetch(:employee, {})
+      # params.require(:employee).permit(:name)
     end
 end

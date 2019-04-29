@@ -1,0 +1,36 @@
+
+<% if notice %>
+    <aside id="notice"><%= notice %></aside>
+<% end %>
+
+<div class="center jumbotron">
+
+<h1>Employee Application</h1>
+
+<li>rails runner lib/create_super_account.rb</li>
+<li>rails runner lib/create_employees_budget_approvers_and_payment_manager.rb</li>
+<li>to create admin account </li>
+<li>super@comapany.com password changeme</li></br>
+
+<td><% if account_signed_in? %>
+      <% if current_account.accountable_type == "Employee"%>
+      <tr class="nav-item active">
+        <%= link_to 'Employee Home', employee_path(current_account.accountable_id), class: "btn btn-danger btn-lg btn-xlarge" %>
+      </tr>
+      <% end %>
+      <% if current_account.accountable_type == "BudgetApprover"%>
+        <tr class="nav-item active">
+          <%= link_to 'Budget Approver', budget_approver_path(current_account.accountable_id), class: "btn btn-danger btn-lg btn-xlarge" %>
+        </tr>
+        <% end %>
+        <% if current_account.accountable_type == "PaymentManager"%>
+      <tr class="nav-item active">
+        <%= link_to 'Payment Manager', payment_manager_path(current_account.accountable_id), class: "btn btn-danger btn-lg btn-xlarge" %>
+      </tr>
+      <% end %>
+      <% else %>
+      <%= link_to "Sign in", "accounts/sign_in", class: "btn btn-danger btn-lg btn-xlarge" %></br></br>
+	  <%= link_to "Sign up now", "accounts/sign_up", class: "btn btn-danger btn-lg btn-xlarge" %>
+<% end %>
+</td>
+</div>

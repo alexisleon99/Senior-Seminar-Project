@@ -1,49 +1,26 @@
 <nav class="navbar navbar-default">
   <%= link_to "Welcome", root_path, class: "navbar-brand", id: "logo" %>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <% if account_signed_in? %>
-      <% if current_account.accountable_type == "Employee"%>
-      <li class="nav-item active">
-        <%= link_to 'Employee Home', employee_path(current_account.accountable_id), class:"nav-link" %>
-      </li>
-      <% end %>
-      <% if current_account.accountable_type == "BudgetApprover"%>
-        <li class="nav-item active">
-          <%= link_to 'Budget Approver Home', budget_approver_path(current_account.accountable_id), class:"nav-link" %>
-        </li>
-        <% end %>
-        <% if current_account.accountable_type == "PaymentManager"%>
-      <li class="nav-item active">
-        <%= link_to 'Payment Manager Home', payment_manager_path(current_account.accountable_id), class:"nav-link" %>
-      </li>
-      <% end %>
-    <li class="nav-item">
-        <%= link_to 'Edit account', edit_account_registration_path, class:"nav-link" %>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <ul class="nav navbar-right col-md-4">
+    <% if account_signed_in? %>
+    <li class="col-md-8 account_name">
+      <%= link_to ('<i class="fa fa-account"></i> ' + truncate(current_account.email, length: 25)).html_safe,edit_account_registration_path, title: 'Edit Profile' %></li> 
+    <li> 
     </li>
-    <li class="nav-item">
-        <%= link_to 'Sign out', destroy_account_session_path, :method=>'delete', class:"nav-link" %>
+    <li class="col-md-1"></li>
+        <li class="col-md-3 logout">
+          <%= link_to('Logout', destroy_account_session_path, class: "btn btn-danger btn-xs btn-xlarge", title: 'Logout', :method => :delete) %></li>
     </li>
     <% if current_account.accountable_type == "SuperAccount"%>
-    <li role="presentation" class="dropdown">
-
-      <a class = "nav-link" href = "/admin">Admin Dasboard</a>
-
+    <li class="col-md-8 admin">
+      <%= link_to('Admin Dashboard', admin_root_path, class: "btn btn-danger btn-xs btn-xlarge", title: 'Admin Dashboard') %>
     </li>
     <%end%>
-<% else %>
-    <li class="nav-item">
-        <%= link_to 'Sign in', new_account_session_path, class:"nav-link" %>
-    </li>
-    <li class="nav-item">
-        <%= link_to 'Sign up', new_account_registration_path,  class:"nav-link" %>
-    </li>
+    <%end%>
 
-<% end %>
+
+
     </ul>
   </div>
 </nav>
