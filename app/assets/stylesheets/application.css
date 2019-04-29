@@ -1,4 +1,13 @@
-/*
+/* .notice, #notice {
+    background: rgb(199, 196, 28);
+    border-radius: 0.5em;
+    border: solid 0.177em #882;
+    color: rgb(5, 5, 1);
+    font-weight: bold;
+    margin-bottom: 1em;
+    padding: 1em 1.414em;
+    text-align: center;
+  }
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
