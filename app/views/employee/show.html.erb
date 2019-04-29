@@ -16,7 +16,7 @@
       <%if travel_form.account_id == current_account.id%>
     <div>
       <tr>
-      <th scope="row">Travel Form</th>
+      <td>Travel Form</td>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
@@ -62,7 +62,7 @@
     <tbody>
     <% @expense_reports.each do |expense_report| %>
       <tr>
-        <th scope="row">Expense Report</th>
+        <td>Expense Report</td>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
