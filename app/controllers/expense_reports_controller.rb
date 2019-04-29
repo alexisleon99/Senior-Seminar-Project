@@ -11,7 +11,7 @@ class ExpenseReportsController < ApplicationController
     report.update_attributes(:status => "Approved")
 
     respond_to do |format|
-      format.html { redirect_to budget_approver_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
+      format.html { redirect_to payment_manager_path(current_account.accountable_id), notice: 'Request Form was Approved!' }
     end
   end
   def denied
