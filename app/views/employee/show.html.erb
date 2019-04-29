@@ -1,20 +1,22 @@
 <p id="notice"><%= notice %></p>
-<div class="col-lg-12 text-center">
-  <h1 class="mt-5"> Employee Travel and Expense Forms</h1>
-</div>
 
-<td><h2 class="mt-5"> Travel Form</h2></td>
-  <table>
-    <td></td>
-    <td>Id</td>
-    <td>status</td>
 
+  <table class ="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope = "col">Submitted Forms</th>
+        <th scope = "col">Id</th>
+        <th scope = "col">status</th>
+        <th scope = "col"></th>
+        <th scope = "col"></th>
+      </tr>
+   </thead>
   <tbody>
     <% @travel_forms.each do |travel_form| %>
       <%if travel_form.account_id == current_account.id%>
     <div>
       <tr>
-      <td> Travel form </td>
+      <th scope="row">Travel Form</th>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= link_to 'Review Travel Form', travel_form %></td>
@@ -43,16 +45,23 @@
   </tbody>
 </table>
 <table>
-  <td><%= link_to 'New Travel Form', new_travel_form_path %></td>
+  <td><%= link_to 'New Travel Form', new_travel_form_path%></td>
 </table>
+</br>
 
+<table class ="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope = "col">Submitted Reports</th>
+        <th scope = "col">Id</th>
+        <th scope = "col">status</th>
 
-<h2 class="mt-5"> Expense Reports </h2>
-<table>
+      </tr>
+   </thead>
     <tbody>
     <% @expense_reports.each do |expense_report| %>
       <tr>
-        <td> Expense Form </td>
+        <th scope="row">Expense Report</th>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
@@ -63,6 +72,7 @@
     <% end %>
   </tbody>
 </table>
+
 
 
 
