@@ -26,7 +26,7 @@
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
         <% if request_form.status != "Approved"%>
-        <th scope="row">Request Form</th>
+        <td>Request Form</td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
         <% if request_form.status == "pending"%>
@@ -70,7 +70,7 @@
     <tbody>
     <% @expense_reports.each do |expense_report| %>
       <tr>
-        <td scope="row">Expense Report</td>
+        <td>Expense Report</td>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
         <td><%= link_to 'Review Expense Report', expense_report %></td>
