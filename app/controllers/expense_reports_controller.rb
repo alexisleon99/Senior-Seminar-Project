@@ -85,6 +85,6 @@ class ExpenseReportsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_report_params
-      params.require(:expense_report).permit(:First_name, :Last_Name, :Department, :Flight, :Hotel, :Mileage, :Transportation, :Other, :image_url)
+      params.require(:expense_report).permit(:First_name, :Last_Name, :Department, :Flight, :Hotel, :Mileage, :Transportation, :Other, :image_url,:travel_forms_id)
     end
 end

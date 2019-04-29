@@ -46,11 +46,16 @@
     <%= form.label :Other %>
     <%= form.text_field :Other %>
   </div>
-
+  <div class="field">
+  <%= form.label :Travel_Form_Id %>
+  <%= form.text_field :travel_forms_id %>
+</div>
   <div class="field">
     <%= form.label :image_url %>
     <%= form.file_field :image_url, id: :Request_form_image_url %>
   </div>
+
+
 
   <div class="actions">
     <%= form.submit %>
