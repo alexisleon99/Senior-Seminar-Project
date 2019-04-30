@@ -1,13 +1,16 @@
-<p id="notice"><%= notice %></p>
+<% if notice %>
+    <aside id="notice"><%= notice %></aside>
+<% end %>
 
-
+<h1>
 <div class="col-lg-12 text-right">
   <% @departments.each do |department| %>
     <% if current_account.department_id == department.id %>
-    <td>Department Budget: <%= department.budget%></td>
+    <td><%= department.names%> Budget:<%= department.budget%></td>
     <% end %>
    <% end %>
 </div>
+</h1>
 </br>
 
   <table class= "table">

@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_04_29_204706) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "status", default: "pending"
-    t.string "account_id"
+    t.integer "account_id"
     t.integer "travel_forms_id"
     t.integer "estimate2", default: 0
   end
