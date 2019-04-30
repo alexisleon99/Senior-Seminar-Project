@@ -1,3 +1,5 @@
 <h1>This is the about page</h1>
+<%= pie_chart Department.group(:names).count %>
+<%= geo_chart TravelForm.group(:location).count %>
 
 <%= link_to 'Home', root_path %>
