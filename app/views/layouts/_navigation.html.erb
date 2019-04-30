@@ -1,13 +1,35 @@
 <nav class="navbar navbar-default">
-  <%= link_to "Welcome", root_path, class: "navbar-brand", id: "logo" %>
+    <%= link_to "Welcome", root_path, class: "navbar-brand", id: "logo" %>
+
 
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <ul class="nav navbar-right col-md-4">
+    <ul class="nav navbar-right col-md-5">
     <% if account_signed_in? %>
-    <li class="col-md-8 account_name">
+    <li class="col-md-5 account_name">
       <%= link_to ('<i class="fa fa-account"></i> ' + truncate(current_account.email, length: 25)).html_safe,edit_account_registration_path, title: 'Edit Profile' %></li> 
     <li> 
     </li>
+     <% if current_account.accountable_type == "Employee"%>
+      <li class="col-md-1"></li>
+        <li class="col-md-3 logout">
+          <%= link_to 'Home', employee_path(current_account.accountable_id), class: "btn btn-danger btn-xs btn-xlarge" %>
+      </li>
+      <% end %>
+      
+      <% if current_account.accountable_type == "BudgetApprover"%>
+      <li class="col-md-1"></li>
+        <li class="col-md-3 logout">
+          <%= link_to 'Home', budget_approver_path(current_account.accountable_id), class: "btn btn-danger btn-xs btn-xlarge" %>
+      </li>
+        <% end %>
+        
+        <% if current_account.accountable_type == "PaymentManager"%>
+      <li class="col-md-1"></li>
+        <li class="col-md-3 logout">
+            <%= link_to 'Home', payment_manager_path(current_account.accountable_id), class: "btn btn-danger btn-xs btn-xlarge"%>
+      </li>
+      <% end %>
+      
     <li class="col-md-1"></li>
         <li class="col-md-3 logout">
           <%= link_to('Logout', destroy_account_session_path, class: "btn btn-danger btn-xs btn-xlarge", title: 'Logout', :method => :delete) %></li>
@@ -19,8 +41,10 @@
     <%end%>
     <%end%>
 
+      
 
 
     </ul>
   </div>
 </nav>
+
