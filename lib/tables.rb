@@ -58,7 +58,7 @@ TravelForm.transaction do
                     :End_Date => '2019-05-02', :Location => 'Florida', 
                     :Flight_Price => '200', :Hotel_Price => '150', 
                     :Transportation => '50', :Other => '30', 
-                    :account_id => 1, :estimate => 430)
+                    :account_id => 1, :estimate => 430, :count => 1)
   TravelForm.create(:First_Name => 'Eric', :Last_Name => 'Eel', 
                     :Department => 'Marketing', :Start_Date => '2019-05-12', 
                     :End_Date => '2019-05-15', :Location => 'Texas', 
