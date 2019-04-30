@@ -17,61 +17,63 @@
       <h1 class="mt-5"> New Travel Form</h1>
     </div>
   </div>
+  </br>
 
-  <div class="col">
-    <%= form.label :First_Name %>
-    <%= form.text_field :First_Name %>
-  </div>
-
-  <div class="col">
-    <%= form.label :Last_Name %>
-    <%= form.text_field :Last_Name %>
-  </div>
-
-
-
-  <div class="field">
-    <%= form.label :Department %>
-    <%= form.text_field :Department %>
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :First_Name, placeholder: "First Name"%>
   </div>
   
+  <div class="col-md-4">
+    <%= form.text_field :Last_Name, placeholder: "Last Name" %>
+  </div>
 
-  <div class="field">
+  <div class="col-md-4">
+    <%= form.text_field :Department, placeholder: "Department" %>
+  </div>
+</div>
+
+</br>
+
+<div class="row">
+  <div class="col-md-4">
     <%= form.label :Start_Date %>
     <%= form.date_select :Start_Date %>
   </div>
 
-  <div class="field">
+  <div class="col-md-4">
     <%= form.label :End_Date %>
     <%= form.date_select :End_Date %>
   </div>
-  
-  <div class="field">
-    <%= form.label :Location %>
-    <%= form.text_field :Location %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Flight_Price %>
-    <%= form.text_field :Flight_Price %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Hotel_Price %>
-    <%= form.text_field :Hotel_Price %>
-  </div>
 
 
-  <div class="field">
-    <%= form.label :Transportation %>
-    <%= form.text_field :Transportation %>
+  <div class="col-md-4">
+    <%= form.text_field :Location, placeholder: "Location" %>
+  </div>
+</div>
+</br>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :Flight_Price, placeholder: "Flight Price" %>
   </div>
 
-  <div class="field">
-    <%= form.label :Other %>
-    <%= form.text_field :Other %>
+  <div class="col-md-4">
+    <%= form.text_field :Hotel_Price, placeholder: "Hotel Price" %>
   </div>
- 
+</div>
+</br>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :Transportation, placeholder: "Transportation" %>
+  </div>
+
+  <div class="col-md-4">
+    <%= form.text_field :Other, placeholder: "Other" %>
+  </div>
+</div>
+ </br>
   
   <div class="actions">
     <%= form.submit %>

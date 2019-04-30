@@ -15,25 +15,25 @@
   
 
   <div class="field">
-  <%= form.label "Department" %>
-  <%= form.collection_select(:departments_id, Department.all, :id, :names, { :prompt => 'Select a Department', :selected => @request_form.departments_id }, { class: 'form-control' }) %>
+  <%= form.collection_select(:departments_id, Department.all, :id, :names, { :prompt => 'Select a Department', :selected => @request_form.departments_id }, { class: 'form-control' })%>
   </div>
 
-  <div class="field">
-    <%= form.label :amount %>
-    <%= form.text_field :amount %>
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :amount, placeholder: "Amount"%>
   </div>
+</div>
 
-  <div class="field">
-    <%= form.label :travel_form_id%>
-    <%= form.number_field :travel_form_id %>
+</br>
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :travel_form_id, placeholder: "Travel Form Id"%>
   </div>
-
+</div>
+</br>
   <div class="actions">
     <%= form.submit %>
   </div>
-
-
 
 <% end %>
 

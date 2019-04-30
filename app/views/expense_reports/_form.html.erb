@@ -10,52 +10,59 @@
       </ul>
     </div>
   <% end %>
+</br>
 
-
-  <div class="field">
-    <%= form.label :First_name %>
-    <%= form.text_field :First_name %>
+  
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :First_name, placeholder: "First Name"%>
+  </div>
+  
+  <div class="col-md-4">
+    <%= form.text_field :Last_Name, placeholder: "Last Name" %>
   </div>
 
-  <div class="field">
-    <%= form.label :Last_Name %>
-    <%= form.text_field :Last_Name %>
+  <div class="col-md-4">
+    <%= form.text_field :Department, placeholder: "Department" %>
   </div>
-
-  <div class="field">
-    <%= form.label :Department %>
-    <%= form.text_field :Department %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Flight %>
-    <%= form.text_field :Flight %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Hotel %>
-    <%= form.text_field :Hotel %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Transportation %>
-    <%= form.text_field :Transportation %>
-  </div>
-
-  <div class="field">
-    <%= form.label :Other %>
-    <%= form.text_field :Other %>
-  </div>
-  <div class="field">
-  <%= form.label :Travel_Form_Id %>
-  <%= form.text_field :travel_forms_id %>
 </div>
+
+</br>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :Flight, placeholder: "Flight Price" %>
+  </div>
+
+  <div class="col-md-4">
+    <%= form.text_field :Hotel, placeholder: "Hotel Price" %>
+  </div>
+</div>
+</br>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :Transportation, placeholder: "Transportation" %>
+  </div>
+
+  <div class="col-md-4">
+    <%= form.text_field :Other, placeholder: "Other" %>
+  </div>
+</div>
+</br>
+
+<div class="row">
+  <div class="col-md-4">
+    <%= form.text_field :travel_forms_id, placeholder: "Travel Form Id" %>
+  </div>
+</div>
+</br>
+
   <div class="field">
     <%= form.label :image_url %>
     <%= form.file_field :image_url, id: :Request_form_image_url %>
   </div>
-
-
+  </br>
 
   <div class="actions">
     <%= form.submit %>

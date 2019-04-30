@@ -1,8 +1,14 @@
 <% if notice %>
     <aside id="notice"><%= notice %></aside>
 <% end %>
-<h1>New Request Form</h1>
+  <div class="container">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-5"> New Request Form</h1>
+    </div>
+  </div>
+  </br>
 
 <%= render 'form', request_form: @request_form %>
 
-<%= link_to 'Done', employee_path(current_account.accountable_id) %>
+<%= link_to 'Done', employee_path(current_account.accountable_id), class:"btn btn-dark btn-sm" %>
+
