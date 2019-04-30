@@ -64,7 +64,7 @@ TravelForm.transaction do
                     :End_Date => '2019-05-15', :Location => 'Texas', 
                     :Flight_Price => '450', :Hotel_Price => '300', 
                     :Transportation => '125', :Other => '75', 
-                    :account_id => 2, :estimate => 950)
+                    :account_id => 2, :estimate => 950, :count => 2)
 end
   
 

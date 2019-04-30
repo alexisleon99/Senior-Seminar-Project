@@ -1,3 +1,4 @@
 <h1> Analytics </h1>
-<%= pie_chart Department.group(:budget).count %>
+<P>Travel form estimates</P>
+<%= line_chart TravelForm.group(:First_Name).group_by_minute(:created_at).count %>
 <%= link_to 'Home', root_path %>

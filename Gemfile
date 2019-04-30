@@ -84,3 +84,4 @@ gem "font-awesome-rails"
 gem 'bundler'
 gem 'rspec-rails'
 gem "chartkick"
+gem 'groupdate'
