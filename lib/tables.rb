@@ -49,3 +49,38 @@ Account.transaction do
   Account.create( :email => 'pam@payment.com', :password => 'changeme', :password_confirmation => 'changeme', 
                   :accountable => PaymentManager.find_by_name("Pam"))
 end
+
+
+TravelForm.transaction do
+  TravelForm.delete_all
+  TravelForm.create(:First_Name => 'Ema', :Last_Name => 'Emerson', 
+                    :Department => 'R&D', :Start_Date => '2019-04-30', 
+                    :End_Date => '2019-05-02', :Location => 'Florida', 
+                    :Flight_Price => '200', :Hotel_Price => '150', 
+                    :Transportation => '50', :Other => '30', 
+                    :account_id => 1, :estimate => 430)
+  TravelForm.create(:First_Name => 'Eric', :Last_Name => 'Eel', 
+                    :Department => 'Marketing', :Start_Date => '2019-05-12', 
+                    :End_Date => '2019-05-15', :Location => 'Texas', 
+                    :Flight_Price => '450', :Hotel_Price => '300', 
+                    :Transportation => '125', :Other => '75', 
+                    :account_id => 2, :estimate => 950)
+end
+  
+
+RequestForm.transaction do
+  RequestForm.delete_all
+  RequestForm.create(:amount => '430', :departments_id => 1, :travel_form_id => 1)
+  RequestForm.create(:amount => '400', :departments_id => 1, :travel_form_id => 2)
+  RequestForm.create(:amount => '550', :departments_id => 2, :travel_form_id => 2)
+end
+
+
+
+
+
+
+
+
+
+
