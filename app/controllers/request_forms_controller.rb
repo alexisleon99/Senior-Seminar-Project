@@ -11,6 +11,7 @@ class RequestFormsController < ApplicationController
     request = set_request_form
     request.update_attributes(:status => "Approved")
     @departments = Department.find(@request_form.departments_id)
+    
     departmentID = request.departments_id
     departmentAway = request.amount
     @departments.budget = @departments.budget - departmentAway
