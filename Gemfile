@@ -10,6 +10,7 @@ group :development do
   gem 'sqlite3'
 end
 group :production do
+  gem 'pg', '0.18.4'
   gem 'rails_12factor', '0.0.2'
   gem 'pg', '0.18.4'
 end
@@ -82,3 +83,5 @@ gem 'bootstrap', '~> 4.2.1'
 gem "font-awesome-rails"
 gem 'bundler'
 gem 'rspec-rails'
+gem "chartkick"
+gem 'groupdate'
