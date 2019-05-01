@@ -25,10 +25,12 @@
         <%if travel_form.status == "Denied"%>
           <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id) %></td>
         <% end %>
-        <%if travel_form.status == "Approved"%>
-          <td><%= link_to 'New Expense Report', new_expense_report_path(:travel_form_id => travel_form.id) %></td>
-                                                
+        <%if travel_form.status == "Approved" %>
+          <td><%= link_to 'New Expense Report', new_expense_report_path(:travel_form_id => travel_form.id) %></td>                                
         <% end %>
+
+
+
       <tr>
       <% @request_forms.each do |request_form| %>
       <% if request_form.travel_form_id == travel_form.id%>
