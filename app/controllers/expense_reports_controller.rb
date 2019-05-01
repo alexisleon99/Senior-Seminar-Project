@@ -69,21 +69,20 @@ class ExpenseReportsController < ApplicationController
   # PATCH/PUT /expense_reports/1.json
   def update
     respond_to do |format|
-      @expense_report = ExpenseReport.new(expense_report_params)
-     @travel_forms = TravelForm.all
-        @expense_reports = ExpenseReport.all
-        @expense_reports.each do |expense_report|
-        @travel_forms.each do |travel_form|
-          @travel_form = @travel_forms.find(@expense_report.travel_forms_id)
-          if @expense_report.estimate2 > @travel_form.estimate
-              @expense_report.update_attributes(:status => "Denied")
-          else
-            @expense_report.update_attribute(:status, "pending")
-          end
-        end
-      end
- 
       if @expense_report.update(expense_report_params)
+        @expense_report.update_attributes(:estimate2 =>(@expense_report.Flight + @expense_report.Hotel + @expense_report.Transportation + @expense_report.Other))
+        @travel_forms = TravelForm.all
+           @expense_reports = ExpenseReport.all
+           @expense_reports.each do |expense_report|
+           @travel_forms.each do |travel_form|
+             @travel_form = @travel_forms.find(@expense_report.travel_forms_id)
+             if @expense_report.estimate2 > @travel_form.estimate
+                 @expense_report.update_attributes(:status => "Denied")
+             else
+               @expense_report.update_attributes(:status => "pending")
+             end
+           end
+         end
         format.html { redirect_to employee_path(current_account.accountable_id), notice: 'Expense report was successfully updated.' }
         format.json { render :show, status: :ok, location: @expense_report }
       else
