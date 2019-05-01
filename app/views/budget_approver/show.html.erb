@@ -32,30 +32,21 @@
         <td>Request Form</td>
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
+         <td><%= link_to 'Review Request Form', request_form, class:"btn btn-info btn-sm" %></td>
+        <% @travel_forms.each do |travel_form| %>
+          <% if request_form.travel_form_id == travel_form.id%>
+           <td><%= link_to 'View Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
+        <% end %>
+              <% end %>
         <% if request_form.status == "pending"%>
         <th scope ="col">
           <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch, class:"btn btn-success btn-sm" %></td>
           <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch, class:"btn btn-danger btn-sm"%></td>
         </th>
         <% end %>
-         <td><%= link_to 'Review Request Form', request_form, class:"btn btn-info btn-sm" %></td>
-        <% end %>
-        <% @travel_forms.each do |travel_form| %>
-          <tr>
-          <% if request_form.travel_form_id == travel_form.id%>
-          <% if travel_form.status != "Approved"%>
-          <td> Travel Forms </td>
-          <td><%= travel_form.id %></td>
-          <td><%= travel_form.status %></td>
-          <td><%= link_to 'View Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
-          </tr>
-          <%end%>
-        <% end %>
-      </tr>
-    <% end %>
-    <% end %>
-    <% end %>
-      </tr>
+      <% end %>
+      <% end %>
+      <% end %>
     </div>
   </tbody>
 </table>
