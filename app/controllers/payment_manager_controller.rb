@@ -14,6 +14,7 @@ class PaymentManagerController < ApplicationController
   def show
     @expense_reports = ExpenseReport.all
     @travel_forms = TravelForm.all
+    @request_forms = RequestForm.all
 
   end
 

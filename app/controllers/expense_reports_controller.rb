@@ -69,6 +69,7 @@ class ExpenseReportsController < ApplicationController
   # PATCH/PUT /expense_reports/1.json
   def update
     respond_to do |format|
+
       if @expense_report.update(expense_report_params)
         @expense_report.update_attributes(:estimate2 =>(@expense_report.Flight + @expense_report.Hotel + @expense_report.Transportation + @expense_report.Other))
         @travel_forms = TravelForm.all
