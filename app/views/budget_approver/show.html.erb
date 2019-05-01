@@ -29,7 +29,8 @@
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
         <% if request_form.status != "Approved"%>
-        <td>Request Form</td>
+        <tr>
+        <td>Request Form</td>          
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
          <td><%= link_to 'Review Request Form', request_form, class:"btn btn-info btn-sm" %></td>
@@ -43,9 +44,10 @@
           <td><%= button_to "Approve", approve_request_form_path(request_form.id), method: :patch, class:"btn btn-success btn-sm" %></td>
           <td><%= button_to "Deny", denied_request_form_path(request_form.id), method: :patch, class:"btn btn-danger btn-sm"%></td>
         </th>
+        </tr>
         <% end %>
       <% end %>
-      <% end %>
+      <% end %> 
       <% end %>
     </div>
   </tbody>
