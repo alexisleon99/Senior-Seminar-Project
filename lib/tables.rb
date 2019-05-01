@@ -53,18 +53,18 @@ end
 
 TravelForm.transaction do
   TravelForm.delete_all
-  TravelForm.create(:First_Name => 'Ema', :Last_Name => 'Emerson', 
-                    :Department => 'R&D', :Start_Date => '2019-04-30', 
-                    :End_Date => '2019-05-02', :Location => 'Florida', 
-                    :Flight_Price => '200', :Hotel_Price => '150', 
-                    :Transportation => '50', :Other => '30', 
-                    :account_id => 1, :estimate => 430, :count => 1)
   TravelForm.create(:First_Name => 'Eric', :Last_Name => 'Eel', 
                     :Department => 'Marketing', :Start_Date => '2019-05-12', 
                     :End_Date => '2019-05-15', :Location => 'Texas', 
                     :Flight_Price => '450', :Hotel_Price => '300', 
                     :Transportation => '125', :Other => '75', 
                     :account_id => 2, :estimate => 950, :count => 2)
+TravelForm.create(:First_Name => 'Ema', :Last_Name => 'Emerson', 
+                    :Department => 'R%D', :Start_Date => '2019-05-12', 
+                    :End_Date => '2019-05-15', :Location => 'Florida', 
+                    :Flight_Price => '200', :Hotel_Price => '150', 
+                    :Transportation => '50', :Other => '30', 
+                    :account_id => 1, :estimate => 430, :count => 1)
 end
   
 

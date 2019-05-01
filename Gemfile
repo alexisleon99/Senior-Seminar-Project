@@ -85,3 +85,4 @@ gem 'bundler'
 gem 'rspec-rails'
 gem "chartkick"
 gem 'groupdate'
+gem 'date_validator'
