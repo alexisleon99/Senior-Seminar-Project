@@ -25,7 +25,7 @@
         <td> Expense Form </td>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
-        <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <td><%= link_to 'Review Expense Report', expense_report, class:"btn btn-info btn-sm" %></td>
         <% if expense_report.status == "pending"%>
         <td><%= button_to "Approve", approve_expense_report_path(expense_report.id), method: :patch, class:"btn btn-success btn-sm" %></td>
         <td><%= button_to "Denied", denied_expense_report_path(expense_report.id), method: :patch, class:"btn btn-danger btn-sm" %></td>
@@ -54,7 +54,7 @@
       <td> Travel form </td>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
-        <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <td><%= link_to 'Review Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
       </tr>
     </div>
     <%end%>

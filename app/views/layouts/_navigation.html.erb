@@ -5,8 +5,9 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <ul class="nav navbar-right col-md-5">
     <% if account_signed_in? %>
+
     <li class="col-md-5 account_name">
-      <%= link_to ('<i class="fa fa-account"></i> ' + truncate(current_account.email, length: 25)).html_safe,edit_account_registration_path, title: 'Edit Profile' %></li> 
+      <%= link_to ('<i class="fa fa-account"></i> ' + truncate(current_account.email, length: 25)).html_safe,edit_account_registration_path, title: 'Edit Profile', class: "btn btn-danger btn-xs btn-xlarge" %></li> 
     <li> 
     </li>
      <% if current_account.accountable_type == "Employee"%>

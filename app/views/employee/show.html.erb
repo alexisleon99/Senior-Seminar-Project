@@ -21,13 +21,12 @@
       <td>Travel Form</td>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
-        <td><%= link_to 'Review Travel Form', travel_form %></td>
+        <td><%= link_to 'Review Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
         <%if travel_form.status == "Denied"%>
-          <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id) %></td>
+          <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id), class:"btn btn-danger btn-sm" %></td>
         <% end %>
         <%if travel_form.status == "Approved"%>
-          <td><%= link_to 'New Expense Report', new_expense_report_path(:travel_form_id => travel_form.id) %></td>
-                                                
+          <td><%= link_to 'New Expense Report', new_expense_report_path(:travel_form_id => travel_form.id), class:"btn btn-success btn-sm"  %></td>
         <% end %>
       <tr>
       <% @request_forms.each do |request_form| %>
@@ -36,7 +35,7 @@
         <td><%= request_form.travel_form_id %></td>
         <td><%= request_form.status %></td>
         <%if request_form.status == "Denied"%>
-          <td><%= link_to 'Resubmit', edit_request_form_path(request_form.id) %></td>
+          <td><%= link_to 'Resubmit', edit_request_form_path(request_form.id), class:"btn btn-danger btn-sm" %></td>
         <% end %>
       </tr>
     <% end %>
@@ -48,7 +47,7 @@
   </tbody>
 </table>
 <table>
-  <td><%= link_to 'New Travel Form', new_travel_form_path%></td>
+  <td><%= link_to 'New Travel Form', new_travel_form_path, class:"btn btn-success btn-sm" %></td>
 </table>
 </br>
 
@@ -69,9 +68,9 @@
         <td><%= current_account.id %></td>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
-        <td><%= link_to 'Review Expense Report', expense_report %></td>
+        <td><%= link_to 'Review Expense Report', expense_report, class:"btn btn-primary btn-sm" %></td>
         <%if expense_report.status == "Denied"%>
-          <td><%= link_to 'Resubmit', edit_expense_report_path(expense_report.id) %></td>
+          <td><%= link_to 'Resubmit', edit_expense_report_path(expense_report.id), class:"btn btn-danger btn-sm" %></td>
         <% end %>
       </tr>
       <% end %>
