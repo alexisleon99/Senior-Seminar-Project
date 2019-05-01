@@ -8,4 +8,5 @@ class Account < ApplicationRecord
          ACCOUNT_TYPES=["SuperAccount","Employee", "Budget Approver","Payment Manager"]
          DEPARTMENT_TYPES=["Marketing", "Sales" ,"Media & Communications" ,"Information Technology" ,"Legal" ,"R&D"]
          attr_accessor :type
+         
 end
