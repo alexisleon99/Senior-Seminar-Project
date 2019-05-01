@@ -16,16 +16,15 @@
   <table class= "table">
     <thead class="thead-dark">
       <tr>
-        <th scope = "col"> Submitted  Forms </th>
+        <th scope = "col">Submitted Forms</th>
         <th scope = "col">Id</th>
-        <th scope = "col">status</th>
+        <th scope = "col">Status</th>
         <th scope = "col"></th>
         <th scope = "col"></th>
 
       </tr>
    </thead>
   <tbody>
-
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
         <% if request_form.status != "Approved"%>
@@ -47,7 +46,12 @@
         </tr>
         <% end %>
       <% end %>
+<<<<<<< HEAD
+      </div>
+      <% end %>
+=======
       <% end %> 
+>>>>>>> 95e94e703fb087eb26bc6b6150f6305a093f4791
       <% end %>
     </div>
   </tbody>
@@ -61,8 +65,8 @@
     <thead class="thead-dark">
       <tr>
         <th scope = "col">Submitted Reports</th>
-        <th scope = "col">Id</th>
-        <th scope = "col">status</th>
+        <th scope = "col">Travel Form Id</th>
+        <th scope = "col">Status</th>
       </tr>
    </thead>
     <tbody>
