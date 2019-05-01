@@ -2,12 +2,37 @@
 
 <p>
   <strong>Department:</strong>
-
   <% @departments.each do |department| %>
-    <% if current_account.department_id == department.id %>
-    <td><%= department.names%></td>
-    <% end %>
-   <% end %>
+    <%if @request_form.departments_id ==  1%>
+      <td>R&D</td>
+      <%break%>
+    <%end%>
+    
+    <%if @request_form.departments_id == 2%>
+      <td>Marketing</td>
+      <%break%>
+    <%end%>
+    
+     <%if @request_form.departments_id == 3%>
+      <td>Sales</td>
+      <%break%>
+    <%end%>
+    
+     <%if @request_form.departments_id == 4%>
+      <td>Media & Communications</td>
+      <%break%>
+    <%end%>
+    
+    <%if @request_form.departments_id == 5%>
+      <td>Information Technology</td>
+      <%break%>
+    <%end%>
+    
+    <%if @request_form.departments_id == 6%>
+      <td>Legal</td>
+      <%break%>
+    <%end%>
+   <%end%>
 </p>
 
 
