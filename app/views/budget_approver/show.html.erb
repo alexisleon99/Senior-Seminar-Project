@@ -25,7 +25,6 @@
       </tr>
    </thead>
   <tbody>
-
       <% @request_forms.each do |request_form| %>
         <% if request_form.departments_id == current_account.department_id%>
         <% if request_form.status != "Approved"%>
@@ -45,6 +44,7 @@
         </th>
         <% end %>
       <% end %>
+      </div>
       <% end %>
       <% end %>
     </div>
