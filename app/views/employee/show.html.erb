@@ -9,7 +9,7 @@
         <th scope = "col">Submitted Forms</th>
         <th scope = "col">Id</th>
         <th scope = "col">status</th>
-        <th scope = "col"></th>
+        <th scope = "col">Total Estimate Cost</th>
         <th scope = "col"></th>
       </tr>
    </thead>
@@ -21,6 +21,7 @@
       <td>Travel Form</td>
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
+        <td><%= travel_form.estimate %></td>
         <td><%= link_to 'Review Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
         <%if travel_form.status == "Denied"%>
           <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id), class:"btn btn-danger btn-sm" %></td>
@@ -28,6 +29,9 @@
         <%if travel_form.status == "Approved"%>
           <td><%= link_to 'New Expense Report', new_expense_report_path(:travel_form_id => travel_form.id), class:"btn btn-success btn-sm"  %></td>
         <% end %>
+
+
+
       <tr>
       <% @request_forms.each do |request_form| %>
       <% if request_form.travel_form_id == travel_form.id%>
@@ -57,6 +61,7 @@
         <th scope = "col">Submitted Reports</th>
         <th scope = "col">Id</th>
         <th scope = "col">status</th>
+        <th scope = "col">Total Actual Cost</th>
 
       </tr>
    </thead>
@@ -65,9 +70,9 @@
       <%if expense_report.account_id == current_account.id%>
       <tr>
         <td>Expense Report</td>
-        <td><%= current_account.id %></td>
         <td><%= expense_report.id %></td>
         <td><%= expense_report.status %></td>
+        <td><%= expense_report.estimate2 %></td>
         <td><%= link_to 'Review Expense Report', expense_report, class:"btn btn-primary btn-sm" %></td>
         <%if expense_report.status == "Denied"%>
           <td><%= link_to 'Resubmit', edit_expense_report_path(expense_report.id), class:"btn btn-danger btn-sm" %></td>

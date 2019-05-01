@@ -2,7 +2,12 @@
 
 <p>
   <strong>Department:</strong>
-  <%= @request_form.departments_id %>
+
+  <% @departments.each do |department| %>
+    <% if current_account.department_id == department.id %>
+    <td><%= department.names%></td>
+    <% end %>
+   <% end %>
 </p>
 
 
