@@ -69,8 +69,8 @@ class ExpenseReportsController < ApplicationController
   # PATCH/PUT /expense_reports/1.json
   def update
     respond_to do |format|
-      @expense_report = ExpenseReport.new(expense_report_params)
-     @travel_forms = TravelForm.all
+        @expense_report = ExpenseReport.new(expense_report_params)
+        @travel_forms = TravelForm.all
         @expense_reports = ExpenseReport.all
         @expense_reports.each do |expense_report|
         @travel_forms.each do |travel_form|
