@@ -24,7 +24,7 @@
         <td><%= travel_form.id %></td>
         <td><%= travel_form.status %></td>
         <td><%= travel_form.estimate %></td>
-        <td><%= link_to 'Review Travel Form', travel_form, class:"btn btn-info btn-sm" %></td>
+        <td><%= link_to 'Review Travel Form', travel_form, class:"btn btn-primary btn-sm" %></td>
         <%if travel_form.status == "Denied"%>
           <td><%= link_to 'Resubmit', edit_travel_form_path(travel_form.id), class:"btn btn-danger btn-sm" %></td>
         <% end %>
