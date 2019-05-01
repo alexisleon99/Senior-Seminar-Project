@@ -60,7 +60,7 @@ TravelForm.transaction do
                     :Transportation => '125', :Other => '75', 
                     :account_id => 2, :estimate => 950, :count => 2)
 TravelForm.create(:First_Name => 'Ema', :Last_Name => 'Emerson', 
-                    :Department => 'R%D', :Start_Date => '2019-05-12', 
+                    :Department => 'R&D', :Start_Date => '2019-05-12', 
                     :End_Date => '2019-05-15', :Location => 'Florida', 
                     :Flight_Price => '200', :Hotel_Price => '150', 
                     :Transportation => '50', :Other => '30', 
