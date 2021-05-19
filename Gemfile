@@ -76,7 +76,7 @@ gem 'devise'
 #simple form for form stuffs 
 gem 'administrate'
 gem 'cocoon'
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 gem 'simple_form'
 gem 'jquery-rails'
 gem 'bootstrap', '~> 4.2.1'
